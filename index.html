@@ -2,271 +2,560 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile-First CSS Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c0e14" media="(prefers-color-scheme: dark)">
+  <title>Pulse — Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="header__logo">
-      <div class="header__logo-icon">M</div>
-      <span>MobileCSS</span>
-    </div>
-    <div class="header__actions">
-      <button class="header__btn header__btn--theme" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-toggle"></span>
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" role="banner">
+    <div class="header__left">
+      <!-- Mobile menu toggle -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <button class="header__btn" aria-label="Notifications">&#9854;</button>
-      <div class="header__avatar">AD</div>
+
+      <!-- Logo -->
+      <a href="#" class="header__logo" aria-label="Pulse Dashboard home">
+        <div class="header__logo-icon" aria-hidden="true">P</div>
+        <span>Pulse</span>
+      </a>
+
+      <!-- Search (tablet+) -->
+      <div class="header__search" role="search">
+        <span class="header__search-icon" aria-hidden="true">&#128269;</span>
+        <input
+          type="search"
+          class="header__search-input"
+          placeholder="Search anything..."
+          aria-label="Search"
+        >
+        <span class="header__search-shortcut" aria-hidden="true">&#8984;K</span>
+      </div>
+    </div>
+
+    <div class="header__right">
+      <!-- Theme toggle -->
+      <button class="header__btn header__btn--theme" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-toggle" aria-hidden="true"></span>
+      </button>
+
+      <div class="header__divider" aria-hidden="true"></div>
+
+      <!-- Notifications -->
+      <button class="header__btn" aria-label="Notifications — 3 unread">
+        <span class="header__btn-icon" aria-hidden="true">&#128276;</span>
+        <span class="header__btn-badge" aria-hidden="true"></span>
+      </button>
+
+      <!-- Help -->
+      <button class="header__btn" aria-label="Help center">
+        <span class="header__btn-icon" aria-hidden="true">&#10068;</span>
+      </button>
+
+      <div class="header__divider" aria-hidden="true"></div>
+
+      <!-- Avatar -->
+      <div class="header__avatar" role="button" tabindex="0" aria-label="User menu — Alex Morgan">
+        AM
+      </div>
     </div>
   </header>
 
-  <!-- Layout -->
+  <!-- ═══════════════ SIDEBAR OVERLAY (mobile) ═══════════════ -->
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════ LAYOUT ═══════════════ -->
   <div class="layout">
 
-    <!-- Sidebar (visible on 1024px+) -->
-    <aside class="sidebar">
-      <p class="sidebar__section-title">Main</p>
-      <nav class="sidebar__nav">
-        <a href="#" class="sidebar__link sidebar__link--active">
-          <span class="sidebar__link-icon">&#9632;</span>
-          Dashboard
-        </a>
-        <a href="#" class="sidebar__link">
-          <span class="sidebar__link-icon">&#9733;</span>
-          Analytics
-        </a>
-        <a href="#" class="sidebar__link">
-          <span class="sidebar__link-icon">&#9881;</span>
-          Projects
-        </a>
-        <a href="#" class="sidebar__link">
-          <span class="sidebar__link-icon">&#9993;</span>
-          Messages
-        </a>
+    <!-- ─── Sidebar ─── -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+      <nav>
+        <div class="sidebar__section">
+          <p class="sidebar__section-title" id="nav-main">Main</p>
+          <ul class="sidebar__nav" aria-labelledby="nav-main">
+            <li>
+              <a href="#" class="sidebar__link sidebar__link--active" aria-current="page">
+                <span class="sidebar__link-icon" aria-hidden="true">&#9632;</span>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="#" class="sidebar__link">
+                <span class="sidebar__link-icon" aria-hidden="true">&#9733;</span>
+                Analytics
+              </a>
+            </li>
+            <li>
+              <a href="#" class="sidebar__link">
+                <span class="sidebar__link-icon" aria-hidden="true">&#9881;</span>
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#" class="sidebar__link">
+                <span class="sidebar__link-icon" aria-hidden="true">&#9993;</span>
+                Messages
+                <span class="badge badge--primary" style="margin-left:auto;">4</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__section-title" id="nav-reports">Reports</p>
+          <ul class="sidebar__nav" aria-labelledby="nav-reports">
+            <li>
+              <a href="#" class="sidebar__link">
+                <span class="sidebar__link-icon" aria-hidden="true">&#128200;</span>
+                Revenue
+              </a>
+            </li>
+            <li>
+              <a href="#" class="sidebar__link">
+                <span class="sidebar__link-icon" aria-hidden="true">&#128101;</span>
+                Customers
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__section-title" id="nav-settings">Settings</p>
+          <ul class="sidebar__nav" aria-labelledby="nav-settings">
+            <li>
+              <a href="#" class="sidebar__link">
+                <span class="sidebar__link-icon" aria-hidden="true">&#128295;</span>
+                Preferences
+              </a>
+            </li>
+            <li>
+              <a href="#" class="sidebar__link">
+                <span class="sidebar__link-icon" aria-hidden="true">&#128274;</span>
+                Security
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
-      <p class="sidebar__section-title">Settings</p>
-      <nav class="sidebar__nav">
-        <a href="#" class="sidebar__link">
-          <span class="sidebar__link-icon">&#9883;</span>
-          Preferences
+
+      <div class="sidebar__spacer"></div>
+
+      <div class="sidebar__footer">
+        <a href="#" class="sidebar__upgrade">
+          <span class="sidebar__upgrade-icon" aria-hidden="true">&#9889;</span>
+          Upgrade to Pro
         </a>
-        <a href="#" class="sidebar__link">
-          <span class="sidebar__link-icon">&#128274;</span>
-          Security
-        </a>
-      </nav>
+      </div>
     </aside>
 
-    <!-- Main Content -->
-    <main class="main">
-      <h1 class="page-title">Dashboard</h1>
-      <p class="page-subtitle">Welcome back. Here's what's happening today.</p>
+    <!-- ─── Main Content ─── -->
+    <main class="main" role="main">
 
-      <!-- Stats Row -->
-      <div class="stats-row">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-subtitle">Welcome back, Alex. Here's your overview for today.</p>
+      </div>
+
+      <!-- ─── Stats Row ─── -->
+      <div class="stats-row" role="region" aria-label="Key metrics">
+
         <div class="card">
           <div class="stat-card">
-            <div class="stat-card__icon stat-card__icon--primary">&#9733;</div>
+            <div class="stat-card__icon stat-card__icon--primary" aria-hidden="true">&#9733;</div>
             <div class="stat-card__info">
-              <p class="stat-card__label">Revenue</p>
+              <p class="stat-card__label">Total Revenue</p>
               <p class="stat-card__value">$48,290</p>
-              <p class="stat-card__change stat-card__change--up">&#8593; 12.5%</p>
+              <p class="stat-card__change stat-card__change--up" aria-label="Up 12.5 percent">
+                <span aria-hidden="true">&#8593;</span> 12.5%
+              </p>
             </div>
           </div>
         </div>
+
         <div class="card">
           <div class="stat-card">
-            <div class="stat-card__icon stat-card__icon--secondary">&#9823;</div>
+            <div class="stat-card__icon stat-card__icon--secondary" aria-hidden="true">&#128101;</div>
             <div class="stat-card__info">
-              <p class="stat-card__label">Users</p>
+              <p class="stat-card__label">Active Users</p>
               <p class="stat-card__value">2,847</p>
-              <p class="stat-card__change stat-card__change--up">&#8593; 8.2%</p>
+              <p class="stat-card__change stat-card__change--up" aria-label="Up 8.2 percent">
+                <span aria-hidden="true">&#8593;</span> 8.2%
+              </p>
             </div>
           </div>
         </div>
+
         <div class="card">
           <div class="stat-card">
-            <div class="stat-card__icon stat-card__icon--accent">&#9827;</div>
+            <div class="stat-card__icon stat-card__icon--accent" aria-hidden="true">&#128179;</div>
             <div class="stat-card__info">
               <p class="stat-card__label">Orders</p>
               <p class="stat-card__value">1,394</p>
-              <p class="stat-card__change stat-card__change--down">&#8595; 3.1%</p>
+              <p class="stat-card__change stat-card__change--down" aria-label="Down 3.1 percent">
+                <span aria-hidden="true">&#8595;</span> 3.1%
+              </p>
             </div>
           </div>
         </div>
+
         <div class="card">
           <div class="stat-card">
-            <div class="stat-card__icon stat-card__icon--success">&#9830;</div>
+            <div class="stat-card__icon stat-card__icon--success" aria-hidden="true">&#128640;</div>
             <div class="stat-card__info">
               <p class="stat-card__label">Conversion</p>
               <p class="stat-card__value">3.24%</p>
-              <p class="stat-card__change stat-card__change--up">&#8593; 1.8%</p>
+              <p class="stat-card__change stat-card__change--up" aria-label="Up 1.8 percent">
+                <span aria-hidden="true">&#8593;</span> 1.8%
+              </p>
             </div>
           </div>
         </div>
+
       </div>
 
-      <!-- Dashboard Grid -->
+      <!-- ─── Dashboard Grid ─── -->
       <div class="dashboard-grid">
 
         <!-- Revenue Chart -->
-        <div class="card card--wide">
+        <div class="card card--span-8">
           <div class="card__header">
-            <h2 class="card__title">Revenue Overview</h2>
-            <span class="card__badge card__badge--success">+12.5%</span>
+            <div>
+              <h2 class="card__title">Revenue Overview</h2>
+              <p class="card__subtitle">Monthly revenue trend for 2026</p>
+            </div>
+            <div class="card__actions">
+              <span class="badge badge--success">+12.5%</span>
+              <button class="card__action-btn" aria-label="More options">&#8942;</button>
+            </div>
           </div>
-          <div class="chart-placeholder">Revenue Chart Area</div>
+          <div class="chart-placeholder" role="img" aria-label="Revenue chart showing monthly growth">
+            <div style="text-align:center;">
+              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2);" aria-hidden="true">&#128200;</span>
+              Revenue Chart Area
+            </div>
+          </div>
         </div>
 
         <!-- Recent Activity -->
-        <div class="card">
+        <div class="card card--span-4">
           <div class="card__header">
             <h2 class="card__title">Recent Activity</h2>
+            <button class="card__action-btn" aria-label="View all activity">&#8594;</button>
           </div>
-          <div class="activity-list">
-            <div class="activity-item">
-              <div class="activity-item__dot activity-item__dot--primary"></div>
+          <div class="activity-list" role="feed" aria-label="Recent activity feed">
+            <div class="activity-item" role="article">
+              <div class="activity-item__dot activity-item__dot--primary" aria-hidden="true"></div>
               <div class="activity-item__content">
                 <p class="activity-item__text">New user registered</p>
-                <p class="activity-item__time">2 minutes ago</p>
+                <div class="activity-item__meta">
+                  <span class="activity-item__time">2 min ago</span>
+                  <span class="activity-item__tag">#onboarding</span>
+                </div>
               </div>
             </div>
-            <div class="activity-item">
-              <div class="activity-item__dot activity-item__dot--success"></div>
+            <div class="activity-item" role="article">
+              <div class="activity-item__dot activity-item__dot--success" aria-hidden="true"></div>
               <div class="activity-item__content">
-                <p class="activity-item__text">Payment received - $420.00</p>
-                <p class="activity-item__time">15 minutes ago</p>
+                <p class="activity-item__text">Payment received — $420.00</p>
+                <div class="activity-item__meta">
+                  <span class="activity-item__time">15 min ago</span>
+                  <span class="activity-item__tag">#billing</span>
+                </div>
               </div>
             </div>
-            <div class="activity-item">
-              <div class="activity-item__dot activity-item__dot--warning"></div>
+            <div class="activity-item" role="article">
+              <div class="activity-item__dot activity-item__dot--warning" aria-hidden="true"></div>
               <div class="activity-item__content">
                 <p class="activity-item__text">Server load at 87%</p>
-                <p class="activity-item__time">1 hour ago</p>
+                <div class="activity-item__meta">
+                  <span class="activity-item__time">1 hour ago</span>
+                  <span class="activity-item__tag">#ops</span>
+                </div>
               </div>
             </div>
-            <div class="activity-item">
-              <div class="activity-item__dot activity-item__dot--danger"></div>
+            <div class="activity-item" role="article">
+              <div class="activity-item__dot activity-item__dot--danger" aria-hidden="true"></div>
               <div class="activity-item__content">
-                <p class="activity-item__text">Failed login attempt</p>
-                <p class="activity-item__time">3 hours ago</p>
+                <p class="activity-item__text">Failed login attempt from 192.168.1.x</p>
+                <div class="activity-item__meta">
+                  <span class="activity-item__time">3 hours ago</span>
+                  <span class="activity-item__tag">#security</span>
+                </div>
+              </div>
+            </div>
+            <div class="activity-item" role="article">
+              <div class="activity-item__dot activity-item__dot--primary" aria-hidden="true"></div>
+              <div class="activity-item__content">
+                <p class="activity-item__text">New comment on Project Alpha</p>
+                <div class="activity-item__meta">
+                  <span class="activity-item__time">5 hours ago</span>
+                  <span class="activity-item__tag">#projects</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Users Chart -->
-        <div class="card">
+        <!-- User Growth -->
+        <div class="card card--span-6">
           <div class="card__header">
-            <h2 class="card__title">User Growth</h2>
-            <span class="card__badge card__badge--warning">+8.2%</span>
+            <div>
+              <h2 class="card__title">User Growth</h2>
+              <p class="card__subtitle">New signups this quarter</p>
+            </div>
+            <div class="card__actions">
+              <span class="badge badge--warning">+8.2%</span>
+              <button class="card__action-btn" aria-label="More options">&#8942;</button>
+            </div>
           </div>
-          <div class="chart-placeholder">User Growth Chart Area</div>
+          <div class="chart-placeholder" role="img" aria-label="User growth chart">
+            <div style="text-align:center;">
+              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2);" aria-hidden="true">&#128101;</span>
+              User Growth Chart Area
+            </div>
+          </div>
         </div>
 
-        <!-- Orders Table -->
-        <div class="card card--wide">
+        <!-- Performance -->
+        <div class="card card--span-6">
           <div class="card__header">
-            <h2 class="card__title">Recent Orders</h2>
+            <div>
+              <h2 class="card__title">Performance</h2>
+              <p class="card__subtitle">System response times</p>
+            </div>
+            <div class="card__actions">
+              <span class="badge badge--info">Healthy</span>
+              <button class="card__action-btn" aria-label="More options">&#8942;</button>
+            </div>
           </div>
-          <div class="table-wrapper">
-            <table class="table">
+          <div class="chart-placeholder" role="img" aria-label="Performance monitoring chart">
+            <div style="text-align:center;">
+              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2);" aria-hidden="true">&#9889;</span>
+              Performance Chart Area
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders Table -->
+        <div class="card card--span-12">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">Recent Orders</h2>
+              <p class="card__subtitle">Latest transactions across all channels</p>
+            </div>
+            <div class="card__actions">
+              <button class="card__action-btn" aria-label="Export orders">&#128194;</button>
+              <button class="card__action-btn" aria-label="View all orders">&#8594;</button>
+            </div>
+          </div>
+          <div class="table-wrapper" tabindex="0" role="region" aria-label="Orders table — scrollable">
+            <table class="table" aria-label="Recent orders">
               <thead>
                 <tr>
-                  <th>Order ID</th>
-                  <th>Customer</th>
-                  <th>Amount</th>
-                  <th>Status</th>
-                  <th>Date</th>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Date</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>#ORD-7841</td>
+                  <td><strong>#ORD-7841</strong></td>
                   <td>Alice Johnson</td>
+                  <td>Pro Plan</td>
                   <td>$234.00</td>
-                  <td><span class="card__badge card__badge--success">Completed</span></td>
+                  <td><span class="badge badge--success">Completed</span></td>
                   <td>Sep 18, 2026</td>
                 </tr>
                 <tr>
-                  <td>#ORD-7840</td>
+                  <td><strong>#ORD-7840</strong></td>
                   <td>Bob Smith</td>
+                  <td>Starter Plan</td>
                   <td>$89.50</td>
-                  <td><span class="card__badge card__badge--warning">Pending</span></td>
+                  <td><span class="badge badge--warning">Pending</span></td>
                   <td>Sep 18, 2026</td>
                 </tr>
                 <tr>
-                  <td>#ORD-7839</td>
+                  <td><strong>#ORD-7839</strong></td>
                   <td>Carol White</td>
+                  <td>Enterprise</td>
                   <td>$412.00</td>
-                  <td><span class="card__badge card__badge--success">Completed</span></td>
+                  <td><span class="badge badge--success">Completed</span></td>
                   <td>Sep 17, 2026</td>
                 </tr>
                 <tr>
-                  <td>#ORD-7838</td>
+                  <td><strong>#ORD-7838</strong></td>
                   <td>David Lee</td>
+                  <td>Starter Plan</td>
                   <td>$67.25</td>
-                  <td><span class="card__badge card__badge--danger">Cancelled</span></td>
+                  <td><span class="badge badge--danger">Cancelled</span></td>
                   <td>Sep 17, 2026</td>
                 </tr>
                 <tr>
-                  <td>#ORD-7837</td>
+                  <td><strong>#ORD-7837</strong></td>
                   <td>Eva Martinez</td>
+                  <td>Pro Plan</td>
                   <td>$321.75</td>
-                  <td><span class="card__badge card__badge--success">Completed</span></td>
+                  <td><span class="badge badge--success">Completed</span></td>
+                  <td>Sep 16, 2026</td>
+                </tr>
+                <tr>
+                  <td><strong>#ORD-7836</strong></td>
+                  <td>Frank Chen</td>
+                  <td>Enterprise</td>
+                  <td>$589.00</td>
+                  <td><span class="badge badge--success">Completed</span></td>
                   <td>Sep 16, 2026</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </div>
-
-        <!-- Performance -->
-        <div class="card">
-          <div class="card__header">
-            <h2 class="card__title">Performance</h2>
+          <div class="quick-stats">
+            <div class="quick-stat">
+              <p class="quick-stat__value">1,247</p>
+              <p class="quick-stat__label">Total Orders</p>
+            </div>
+            <div class="quick-stat">
+              <p class="quick-stat__value">$94.2K</p>
+              <p class="quick-stat__label">Total Revenue</p>
+            </div>
+            <div class="quick-stat">
+              <p class="quick-stat__value">98.4%</p>
+              <p class="quick-stat__label">Fulfillment</p>
+            </div>
           </div>
-          <div class="chart-placeholder">Performance Chart Area</div>
         </div>
 
       </div>
     </main>
   </div>
 
-  <!-- Mobile Bottom Navigation -->
+  <!-- ═══════════════ MOBILE BOTTOM NAV ═══════════════ -->
   <nav class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#" class="mobile-nav__item mobile-nav__item--active">
-      <span class="mobile-nav__icon">&#9632;</span>
+    <a href="#" class="mobile-nav__item mobile-nav__item--active" aria-current="page">
+      <span class="mobile-nav__icon" aria-hidden="true">&#9632;</span>
       Home
     </a>
     <a href="#" class="mobile-nav__item">
-      <span class="mobile-nav__icon">&#9733;</span>
+      <span class="mobile-nav__icon" aria-hidden="true">&#9733;</span>
       Stats
     </a>
     <a href="#" class="mobile-nav__item">
-      <span class="mobile-nav__icon">&#9881;</span>
+      <span class="mobile-nav__icon" aria-hidden="true">&#9881;</span>
       Projects
     </a>
     <a href="#" class="mobile-nav__item">
-      <span class="mobile-nav__icon">&#9993;</span>
+      <span class="mobile-nav__icon" aria-hidden="true">&#9993;</span>
       Messages
     </a>
   </nav>
 
+  <!-- ═══════════════ SCRIPTS ═══════════════ -->
   <script>
-    const toggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
+    (function () {
+      'use strict';
 
-    toggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
-    });
+      // ── Theme Toggle with localStorage persistence ──
+      const html = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const STORAGE_KEY = 'pulse-theme';
+
+      function getPreferredTheme() {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) return stored;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      function setTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem(STORAGE_KEY, theme);
+        const meta = document.querySelector('meta[name="theme-color"][media*="prefers-color-scheme"]');
+        if (meta) {
+          meta.content = theme === 'dark' ? '#0c0e14' : '#f4f5f7';
+        }
+      }
+
+      // Apply stored/system theme on load
+      setTheme(getPreferredTheme());
+
+      toggle.addEventListener('click', function () {
+        const current = html.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        if (!localStorage.getItem(STORAGE_KEY)) {
+          setTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+
+      // ── Mobile Sidebar Toggle ──
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        overlay.style.display = 'block';
+        menuBtn.classList.add('active');
+        menuBtn.setAttribute('aria-label', 'Close navigation menu');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-label', 'Open navigation menu');
+        document.body.style.overflow = '';
+        setTimeout(function () {
+          overlay.style.display = 'none';
+        }, 200);
+      }
+
+      menuBtn.addEventListener('click', function () {
+        if (sidebar.classList.contains('open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      overlay.addEventListener('click', closeSidebar);
+
+      // Close sidebar on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+          menuBtn.focus();
+        }
+      });
+
+      // Close sidebar on resize to desktop
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          if (window.innerWidth >= 1024 && sidebar.classList.contains('open')) {
+            closeSidebar();
+          }
+        }, 100);
+      });
+    })();
   </script>
 </body>
 </html>
