@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile-First CSS Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo">
+      <div class="header__logo-icon">M</div>
+      <span>MobileCSS</span>
+    </div>
+    <div class="header__actions">
+      <button class="header__btn header__btn--theme" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-toggle"></span>
+      </button>
+      <button class="header__btn" aria-label="Notifications">&#9854;</button>
+      <div class="header__avatar">AD</div>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="layout">
+
+    <!-- Sidebar (visible on 1024px+) -->
+    <aside class="sidebar">
+      <p class="sidebar__section-title">Main</p>
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__link sidebar__link--active">
+          <span class="sidebar__link-icon">&#9632;</span>
+          Dashboard
+        </a>
+        <a href="#" class="sidebar__link">
+          <span class="sidebar__link-icon">&#9733;</span>
+          Analytics
+        </a>
+        <a href="#" class="sidebar__link">
+          <span class="sidebar__link-icon">&#9881;</span>
+          Projects
+        </a>
+        <a href="#" class="sidebar__link">
+          <span class="sidebar__link-icon">&#9993;</span>
+          Messages
+        </a>
+      </nav>
+      <p class="sidebar__section-title">Settings</p>
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__link">
+          <span class="sidebar__link-icon">&#9883;</span>
+          Preferences
+        </a>
+        <a href="#" class="sidebar__link">
+          <span class="sidebar__link-icon">&#128274;</span>
+          Security
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <h1 class="page-title">Dashboard</h1>
+      <p class="page-subtitle">Welcome back. Here's what's happening today.</p>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="card">
+          <div class="stat-card">
+            <div class="stat-card__icon stat-card__icon--primary">&#9733;</div>
+            <div class="stat-card__info">
+              <p class="stat-card__label">Revenue</p>
+              <p class="stat-card__value">$48,290</p>
+              <p class="stat-card__change stat-card__change--up">&#8593; 12.5%</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="stat-card">
+            <div class="stat-card__icon stat-card__icon--secondary">&#9823;</div>
+            <div class="stat-card__info">
+              <p class="stat-card__label">Users</p>
+              <p class="stat-card__value">2,847</p>
+              <p class="stat-card__change stat-card__change--up">&#8593; 8.2%</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="stat-card">
+            <div class="stat-card__icon stat-card__icon--accent">&#9827;</div>
+            <div class="stat-card__info">
+              <p class="stat-card__label">Orders</p>
+              <p class="stat-card__value">1,394</p>
+              <p class="stat-card__change stat-card__change--down">&#8595; 3.1%</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="stat-card">
+            <div class="stat-card__icon stat-card__icon--success">&#9830;</div>
+            <div class="stat-card__info">
+              <p class="stat-card__label">Conversion</p>
+              <p class="stat-card__value">3.24%</p>
+              <p class="stat-card__change stat-card__change--up">&#8593; 1.8%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Grid -->
+      <div class="dashboard-grid">
+
+        <!-- Revenue Chart -->
+        <div class="card card--wide">
+          <div class="card__header">
+            <h2 class="card__title">Revenue Overview</h2>
+            <span class="card__badge card__badge--success">+12.5%</span>
+          </div>
+          <div class="chart-placeholder">Revenue Chart Area</div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card">
+          <div class="card__header">
+            <h2 class="card__title">Recent Activity</h2>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-item__dot activity-item__dot--primary"></div>
+              <div class="activity-item__content">
+                <p class="activity-item__text">New user registered</p>
+                <p class="activity-item__time">2 minutes ago</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-item__dot activity-item__dot--success"></div>
+              <div class="activity-item__content">
+                <p class="activity-item__text">Payment received - $420.00</p>
+                <p class="activity-item__time">15 minutes ago</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-item__dot activity-item__dot--warning"></div>
+              <div class="activity-item__content">
+                <p class="activity-item__text">Server load at 87%</p>
+                <p class="activity-item__time">1 hour ago</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-item__dot activity-item__dot--danger"></div>
+              <div class="activity-item__content">
+                <p class="activity-item__text">Failed login attempt</p>
+                <p class="activity-item__time">3 hours ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Users Chart -->
+        <div class="card">
+          <div class="card__header">
+            <h2 class="card__title">User Growth</h2>
+            <span class="card__badge card__badge--warning">+8.2%</span>
+          </div>
+          <div class="chart-placeholder">User Growth Chart Area</div>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="card card--wide">
+          <div class="card__header">
+            <h2 class="card__title">Recent Orders</h2>
+          </div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#ORD-7841</td>
+                  <td>Alice Johnson</td>
+                  <td>$234.00</td>
+                  <td><span class="card__badge card__badge--success">Completed</span></td>
+                  <td>Sep 18, 2026</td>
+                </tr>
+                <tr>
+                  <td>#ORD-7840</td>
+                  <td>Bob Smith</td>
+                  <td>$89.50</td>
+                  <td><span class="card__badge card__badge--warning">Pending</span></td>
+                  <td>Sep 18, 2026</td>
+                </tr>
+                <tr>
+                  <td>#ORD-7839</td>
+                  <td>Carol White</td>
+                  <td>$412.00</td>
+                  <td><span class="card__badge card__badge--success">Completed</span></td>
+                  <td>Sep 17, 2026</td>
+                </tr>
+                <tr>
+                  <td>#ORD-7838</td>
+                  <td>David Lee</td>
+                  <td>$67.25</td>
+                  <td><span class="card__badge card__badge--danger">Cancelled</span></td>
+                  <td>Sep 17, 2026</td>
+                </tr>
+                <tr>
+                  <td>#ORD-7837</td>
+                  <td>Eva Martinez</td>
+                  <td>$321.75</td>
+                  <td><span class="card__badge card__badge--success">Completed</span></td>
+                  <td>Sep 16, 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Performance -->
+        <div class="card">
+          <div class="card__header">
+            <h2 class="card__title">Performance</h2>
+          </div>
+          <div class="chart-placeholder">Performance Chart Area</div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#" class="mobile-nav__item mobile-nav__item--active">
+      <span class="mobile-nav__icon">&#9632;</span>
+      Home
+    </a>
+    <a href="#" class="mobile-nav__item">
+      <span class="mobile-nav__icon">&#9733;</span>
+      Stats
+    </a>
+    <a href="#" class="mobile-nav__item">
+      <span class="mobile-nav__icon">&#9881;</span>
+      Projects
+    </a>
+    <a href="#" class="mobile-nav__item">
+      <span class="mobile-nav__icon">&#9993;</span>
+      Messages
+    </a>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    toggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
