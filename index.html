@@ -1,561 +1,729 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f4f5f7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0c0e14" media="(prefers-color-scheme: dark)">
-  <title>Pulse — Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Lumora Books — A premium online bookstore for curious minds and thoughtful readers."
+  />
+
+  <title>Lumora Books — Discover Your Next Chapter</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- Decorative Background -->
+  <div class="background-orb orb-one"></div>
+  <div class="background-orb orb-two"></div>
+  <div class="background-orb orb-three"></div>
 
-  <!-- ═══════════════ HEADER ═══════════════ -->
-  <header class="header" role="banner">
-    <div class="header__left">
-      <!-- Mobile menu toggle -->
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#home" class="brand">
+        <span class="brand-icon">
+          <i class="fa-solid fa-book-open"></i>
+        </span>
 
-      <!-- Logo -->
-      <a href="#" class="header__logo" aria-label="Pulse Dashboard home">
-        <div class="header__logo-icon" aria-hidden="true">P</div>
-        <span>Pulse</span>
+        <span class="brand-text">
+          Lumora<span>.</span>
+        </span>
       </a>
 
-      <!-- Search (tablet+) -->
-      <div class="header__search" role="search">
-        <span class="header__search-icon" aria-hidden="true">&#128269;</span>
-        <input
-          type="search"
-          class="header__search-input"
-          placeholder="Search anything..."
-          aria-label="Search"
-        >
-        <span class="header__search-shortcut" aria-hidden="true">&#8984;K</span>
-      </div>
-    </div>
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#bestsellers">Bestsellers</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#about">About</a>
+      </nav>
 
-    <div class="header__right">
-      <!-- Theme toggle -->
-      <button class="header__btn header__btn--theme" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="theme-toggle" aria-hidden="true"></span>
-      </button>
+      <div class="nav-actions">
+        <button class="icon-button" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
 
-      <div class="header__divider" aria-hidden="true"></div>
+        <button class="icon-button account-button" aria-label="Account">
+          <i class="fa-regular fa-user"></i>
+        </button>
 
-      <!-- Notifications -->
-      <button class="header__btn" aria-label="Notifications — 3 unread">
-        <span class="header__btn-icon" aria-hidden="true">&#128276;</span>
-        <span class="header__btn-badge" aria-hidden="true"></span>
-      </button>
+        <button class="cart-button" aria-label="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count">2</span>
+        </button>
 
-      <!-- Help -->
-      <button class="header__btn" aria-label="Help center">
-        <span class="header__btn-icon" aria-hidden="true">&#10068;</span>
-      </button>
+        <details class="mobile-menu">
+          <summary aria-label="Open Menu">
+            <i class="fa-solid fa-bars"></i>
+          </summary>
 
-      <div class="header__divider" aria-hidden="true"></div>
-
-      <!-- Avatar -->
-      <div class="header__avatar" role="button" tabindex="0" aria-label="User menu — Alex Morgan">
-        AM
+          <nav class="mobile-nav" aria-label="Mobile Navigation">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#bestsellers">Bestsellers</a>
+            <a href="#new-arrivals">New Arrivals</a>
+            <a href="#about">About</a>
+          </nav>
+        </details>
       </div>
     </div>
   </header>
 
-  <!-- ═══════════════ SIDEBAR OVERLAY (mobile) ═══════════════ -->
-  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            Curated stories for curious minds
+          </div>
 
-  <!-- ═══════════════ LAYOUT ═══════════════ -->
-  <div class="layout">
+          <h1>
+            Every book is
+            <span>another world</span>
+            waiting to be explored.
+          </h1>
 
-    <!-- ─── Sidebar ─── -->
-    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
-      <nav>
-        <div class="sidebar__section">
-          <p class="sidebar__section-title" id="nav-main">Main</p>
-          <ul class="sidebar__nav" aria-labelledby="nav-main">
-            <li>
-              <a href="#" class="sidebar__link sidebar__link--active" aria-current="page">
-                <span class="sidebar__link-icon" aria-hidden="true">&#9632;</span>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="sidebar__link">
-                <span class="sidebar__link-icon" aria-hidden="true">&#9733;</span>
-                Analytics
-              </a>
-            </li>
-            <li>
-              <a href="#" class="sidebar__link">
-                <span class="sidebar__link-icon" aria-hidden="true">&#9881;</span>
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#" class="sidebar__link">
-                <span class="sidebar__link-icon" aria-hidden="true">&#9993;</span>
-                Messages
-                <span class="badge badge--primary" style="margin-left:auto;">4</span>
-              </a>
-            </li>
-          </ul>
+          <p class="hero-description">
+            Discover thoughtfully selected books, timeless classics, and
+            inspiring new voices delivered directly to your reading shelf.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#bestsellers" class="button button-primary">
+              Explore Collection
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#categories" class="button button-secondary">
+              Browse Categories
+            </a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="avatar-stack">
+              <span class="avatar avatar-one">A</span>
+              <span class="avatar avatar-two">R</span>
+              <span class="avatar avatar-three">M</span>
+              <span class="avatar avatar-four">K</span>
+            </div>
+
+            <div>
+              <div class="rating-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p>
+                Loved by <strong>12,000+</strong> readers
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="sidebar__section">
-          <p class="sidebar__section-title" id="nav-reports">Reports</p>
-          <ul class="sidebar__nav" aria-labelledby="nav-reports">
-            <li>
-              <a href="#" class="sidebar__link">
-                <span class="sidebar__link-icon" aria-hidden="true">&#128200;</span>
-                Revenue
-              </a>
-            </li>
-            <li>
-              <a href="#" class="sidebar__link">
-                <span class="sidebar__link-icon" aria-hidden="true">&#128101;</span>
-                Customers
-              </a>
-            </li>
-          </ul>
+        <div class="hero-visual">
+          <div class="hero-glow"></div>
+
+          <div class="floating-label label-top">
+            <i class="fa-solid fa-sparkles"></i>
+            Editor's Pick
+          </div>
+
+          <div class="book-scene">
+            <div class="book-shadow"></div>
+
+            <div class="book-cover main-book">
+              <div class="book-cover-top">
+                LUMORA
+              </div>
+
+              <div class="book-cover-title">
+                The Art<br />
+                of Becoming
+              </div>
+
+              <div class="book-cover-author">
+                ELIAS MORROW
+              </div>
+
+              <div class="book-cover-symbol">
+                ✦
+              </div>
+            </div>
+
+            <div class="book-cover side-book">
+              <div class="side-book-title">
+                Quiet<br />
+                Horizons
+              </div>
+
+              <div class="side-book-author">
+                NOAH VALE
+              </div>
+            </div>
+
+            <div class="book-cover small-book">
+              <div class="small-book-title">
+                Notes<br />
+                to Self
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-label label-bottom">
+            <i class="fa-solid fa-truck-fast"></i>
+            Free delivery over ₹999
+          </div>
+
+          <div class="hero-circle circle-one"></div>
+          <div class="hero-circle circle-two"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">25K+</span>
+          <span class="stat-label">Books available</span>
         </div>
 
-        <div class="sidebar__section">
-          <p class="sidebar__section-title" id="nav-settings">Settings</p>
-          <ul class="sidebar__nav" aria-labelledby="nav-settings">
-            <li>
-              <a href="#" class="sidebar__link">
-                <span class="sidebar__link-icon" aria-hidden="true">&#128295;</span>
-                Preferences
-              </a>
-            </li>
-            <li>
-              <a href="#" class="sidebar__link">
-                <span class="sidebar__link-icon" aria-hidden="true">&#128274;</span>
-                Security
-              </a>
-            </li>
-          </ul>
+        <div class="stat-item">
+          <span class="stat-number">4.9/5</span>
+          <span class="stat-label">Reader satisfaction</span>
         </div>
-      </nav>
 
-      <div class="sidebar__spacer"></div>
+        <div class="stat-item">
+          <span class="stat-number">48H</span>
+          <span class="stat-label">Fast dispatch</span>
+        </div>
 
-      <div class="sidebar__footer">
-        <a href="#" class="sidebar__upgrade">
-          <span class="sidebar__upgrade-icon" aria-hidden="true">&#9889;</span>
-          Upgrade to Pro
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Curated collection</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section categories-section" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Explore by interest</span>
+            <h2>Find your next obsession.</h2>
+          </div>
+
+          <a href="#bestsellers" class="text-link">
+            View all categories
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="category-grid">
+          <a href="#bestsellers" class="category-card category-fiction">
+            <div class="category-icon">
+              <i class="fa-solid fa-feather-pointed"></i>
+            </div>
+
+            <div class="category-content">
+              <h3>Fiction</h3>
+              <p>Stories that stay with you.</p>
+              <span>4,280 books</span>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square category-arrow"></i>
+          </a>
+
+          <a href="#bestsellers" class="category-card category-business">
+            <div class="category-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <div class="category-content">
+              <h3>Business</h3>
+              <p>Ideas that move you forward.</p>
+              <span>2,150 books</span>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square category-arrow"></i>
+          </a>
+
+          <a href="#bestsellers" class="category-card category-mind">
+            <div class="category-icon">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <div class="category-content">
+              <h3>Mind &amp; Wellness</h3>
+              <p>Build a better inner world.</p>
+              <span>1,890 books</span>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square category-arrow"></i>
+          </a>
+
+          <a href="#bestsellers" class="category-card category-design">
+            <div class="category-icon">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+
+            <div class="category-content">
+              <h3>Art &amp; Design</h3>
+              <p>See the world differently.</p>
+              <span>1,240 books</span>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square category-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bestsellers -->
+    <section class="section products-section" id="bestsellers">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Reader favourites</span>
+            <h2>Bestsellers worth knowing.</h2>
+          </div>
+
+          <a href="#new-arrivals" class="text-link">
+            Explore all books
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <article class="product-card">
+            <div class="product-image image-one">
+              <span class="product-badge">Bestseller</span>
+
+              <button class="wishlist-button" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+              <div class="product-book book-product-one">
+                <div class="product-book-title">
+                  The<br />
+                  Creative<br />
+                  Habit
+                </div>
+
+                <div class="product-book-author">
+                  TWYLA THARP
+                </div>
+              </div>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">Creativity</span>
+
+              <h3>
+                The Creative Habit
+              </h3>
+
+              <p class="product-author">
+                By Twyla Tharp
+              </p>
+
+              <div class="product-bottom">
+                <div class="price">
+                  <strong>₹699</strong>
+                  <del>₹899</del>
+                </div>
+
+                <button class="add-button" aria-label="Add book to cart">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card">
+            <div class="product-image image-two">
+              <span class="product-badge badge-new">Editor's Pick</span>
+
+              <button class="wishlist-button" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+              <div class="product-book book-product-two">
+                <div class="product-book-title">
+                  Atomic<br />
+                  Habits
+                </div>
+
+                <div class="product-book-author">
+                  JAMES CLEAR
+                </div>
+              </div>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">Self Development</span>
+
+              <h3>
+                Atomic Habits
+              </h3>
+
+              <p class="product-author">
+                By James Clear
+              </p>
+
+              <div class="product-bottom">
+                <div class="price">
+                  <strong>₹549</strong>
+                  <del>₹799</del>
+                </div>
+
+                <button class="add-button" aria-label="Add book to cart">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card">
+            <div class="product-image image-three">
+              <span class="product-badge badge-limited">Limited Edition</span>
+
+              <button class="wishlist-button" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+              <div class="product-book book-product-three">
+                <div class="product-book-title">
+                  The<br />
+                  Alchemist
+                </div>
+
+                <div class="product-book-author">
+                  PAULO COELHO
+                </div>
+              </div>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">Literary Fiction</span>
+
+              <h3>
+                The Alchemist
+              </h3>
+
+              <p class="product-author">
+                By Paulo Coelho
+              </p>
+
+              <div class="product-bottom">
+                <div class="price">
+                  <strong>₹399</strong>
+                  <del>₹499</del>
+                </div>
+
+                <button class="add-button" aria-label="Add book to cart">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card">
+            <div class="product-image image-four">
+              <span class="product-badge badge-new">New Arrival</span>
+
+              <button class="wishlist-button" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+              <div class="product-book book-product-four">
+                <div class="product-book-title">
+                  Ikigai
+                </div>
+
+                <div class="product-book-author">
+                  HÉCTOR GARCÍA
+                </div>
+              </div>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">Lifestyle</span>
+
+              <h3>
+                Ikigai
+              </h3>
+
+              <p class="product-author">
+                By Héctor García
+              </p>
+
+              <div class="product-bottom">
+                <div class="price">
+                  <strong>₹479</strong>
+                  <del>₹650</del>
+                </div>
+
+                <button class="add-button" aria-label="Add book to cart">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Banner -->
+    <section class="editorial-section">
+      <div class="container editorial-card">
+        <div class="editorial-content">
+          <span class="section-kicker">The Lumora Journal</span>
+
+          <h2>
+            A slower life begins
+            with a better story.
+          </h2>
+
+          <p>
+            Read thoughtful essays, author conversations, and carefully
+            curated recommendations from our editorial team.
+          </p>
+
+          <a href="#about" class="button button-light">
+            Read the Journal
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="editorial-art">
+          <div class="art-circle art-circle-one"></div>
+          <div class="art-circle art-circle-two"></div>
+
+          <div class="journal-card">
+            <div class="journal-card-top">
+              <span>LUMORA JOURNAL</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+
+            <div class="journal-card-line"></div>
+
+            <h3>
+              The beauty of
+              <span>reading slowly.</span>
+            </h3>
+
+            <p>
+              Issue No. 08
+            </p>
+
+            <div class="journal-card-footer">
+              <span>Essay Collection</span>
+              <span>2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="section new-arrivals-section" id="new-arrivals">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Fresh on the shelf</span>
+            <h2>New arrivals.</h2>
+          </div>
+
+          <a href="#home" class="text-link">
+            See all new books
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="arrival-grid">
+          <article class="arrival-card">
+            <div class="arrival-cover arrival-cover-one">
+              <span>THE<br />LAST<br />LIGHT</span>
+              <small>AMELIA ROSS</small>
+            </div>
+
+            <div class="arrival-info">
+              <span>Contemporary Fiction</span>
+              <h3>The Last Light</h3>
+              <p>₹799</p>
+            </div>
+          </article>
+
+          <article class="arrival-card">
+            <div class="arrival-cover arrival-cover-two">
+              <span>DESIGN<br />YOUR<br />DAY</span>
+              <small>ELENA PARK</small>
+            </div>
+
+            <div class="arrival-info">
+              <span>Productivity</span>
+              <h3>Design Your Day</h3>
+              <p>₹599</p>
+            </div>
+          </article>
+
+          <article class="arrival-card">
+            <div class="arrival-cover arrival-cover-three">
+              <span>THE<br />MINIMAL<br />MIND</span>
+              <small>JON BELL</small>
+            </div>
+
+            <div class="arrival-info">
+              <span>Mindfulness</span>
+              <h3>The Minimal Mind</h3>
+              <p>₹649</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="container newsletter-card">
+        <div class="newsletter-icon">
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+
+        <div class="newsletter-content">
+          <span class="section-kicker">Stay curious</span>
+
+          <h2>
+            Stories, recommendations,
+            and little sparks of wonder.
+          </h2>
+
+          <p>
+            Join our monthly reading list for new releases, hidden gems,
+            and thoughtful recommendations.
+          </p>
+        </div>
+
+        <form class="newsletter-form">
+          <label for="email" class="sr-only">
+            Email address
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+          />
+
+          <button type="submit" class="button button-primary">
+            Subscribe
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="about">
+    <div class="container footer-grid">
+      <div class="footer-brand-column">
+        <a href="#home" class="brand footer-brand">
+          <span class="brand-icon">
+            <i class="fa-solid fa-book-open"></i>
+          </span>
+
+          <span class="brand-text">
+            Lumora<span>.</span>
+          </span>
         </a>
-      </div>
-    </aside>
 
-    <!-- ─── Main Content ─── -->
-    <main class="main" role="main">
+        <p>
+          A thoughtfully curated bookstore for people who believe every
+          chapter can change something.
+        </p>
 
-      <!-- Page Header -->
-      <div class="page-header">
-        <h1 class="page-title">Dashboard</h1>
-        <p class="page-subtitle">Welcome back, Alex. Here's your overview for today.</p>
-      </div>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
 
-      <!-- ─── Stats Row ─── -->
-      <div class="stats-row" role="region" aria-label="Key metrics">
+          <a href="#" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
 
-        <div class="card">
-          <div class="stat-card">
-            <div class="stat-card__icon stat-card__icon--primary" aria-hidden="true">&#9733;</div>
-            <div class="stat-card__info">
-              <p class="stat-card__label">Total Revenue</p>
-              <p class="stat-card__value">$48,290</p>
-              <p class="stat-card__change stat-card__change--up" aria-label="Up 12.5 percent">
-                <span aria-hidden="true">&#8593;</span> 12.5%
-              </p>
-            </div>
-          </div>
+          <a href="#" aria-label="Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
         </div>
-
-        <div class="card">
-          <div class="stat-card">
-            <div class="stat-card__icon stat-card__icon--secondary" aria-hidden="true">&#128101;</div>
-            <div class="stat-card__info">
-              <p class="stat-card__label">Active Users</p>
-              <p class="stat-card__value">2,847</p>
-              <p class="stat-card__change stat-card__change--up" aria-label="Up 8.2 percent">
-                <span aria-hidden="true">&#8593;</span> 8.2%
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="stat-card">
-            <div class="stat-card__icon stat-card__icon--accent" aria-hidden="true">&#128179;</div>
-            <div class="stat-card__info">
-              <p class="stat-card__label">Orders</p>
-              <p class="stat-card__value">1,394</p>
-              <p class="stat-card__change stat-card__change--down" aria-label="Down 3.1 percent">
-                <span aria-hidden="true">&#8595;</span> 3.1%
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="stat-card">
-            <div class="stat-card__icon stat-card__icon--success" aria-hidden="true">&#128640;</div>
-            <div class="stat-card__info">
-              <p class="stat-card__label">Conversion</p>
-              <p class="stat-card__value">3.24%</p>
-              <p class="stat-card__change stat-card__change--up" aria-label="Up 1.8 percent">
-                <span aria-hidden="true">&#8593;</span> 1.8%
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- ─── Dashboard Grid ─── -->
-      <div class="dashboard-grid">
-
-        <!-- Revenue Chart -->
-        <div class="card card--span-8">
-          <div class="card__header">
-            <div>
-              <h2 class="card__title">Revenue Overview</h2>
-              <p class="card__subtitle">Monthly revenue trend for 2026</p>
-            </div>
-            <div class="card__actions">
-              <span class="badge badge--success">+12.5%</span>
-              <button class="card__action-btn" aria-label="More options">&#8942;</button>
-            </div>
-          </div>
-          <div class="chart-placeholder" role="img" aria-label="Revenue chart showing monthly growth">
-            <div style="text-align:center;">
-              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2);" aria-hidden="true">&#128200;</span>
-              Revenue Chart Area
-            </div>
-          </div>
-        </div>
-
-        <!-- Recent Activity -->
-        <div class="card card--span-4">
-          <div class="card__header">
-            <h2 class="card__title">Recent Activity</h2>
-            <button class="card__action-btn" aria-label="View all activity">&#8594;</button>
-          </div>
-          <div class="activity-list" role="feed" aria-label="Recent activity feed">
-            <div class="activity-item" role="article">
-              <div class="activity-item__dot activity-item__dot--primary" aria-hidden="true"></div>
-              <div class="activity-item__content">
-                <p class="activity-item__text">New user registered</p>
-                <div class="activity-item__meta">
-                  <span class="activity-item__time">2 min ago</span>
-                  <span class="activity-item__tag">#onboarding</span>
-                </div>
-              </div>
-            </div>
-            <div class="activity-item" role="article">
-              <div class="activity-item__dot activity-item__dot--success" aria-hidden="true"></div>
-              <div class="activity-item__content">
-                <p class="activity-item__text">Payment received — $420.00</p>
-                <div class="activity-item__meta">
-                  <span class="activity-item__time">15 min ago</span>
-                  <span class="activity-item__tag">#billing</span>
-                </div>
-              </div>
-            </div>
-            <div class="activity-item" role="article">
-              <div class="activity-item__dot activity-item__dot--warning" aria-hidden="true"></div>
-              <div class="activity-item__content">
-                <p class="activity-item__text">Server load at 87%</p>
-                <div class="activity-item__meta">
-                  <span class="activity-item__time">1 hour ago</span>
-                  <span class="activity-item__tag">#ops</span>
-                </div>
-              </div>
-            </div>
-            <div class="activity-item" role="article">
-              <div class="activity-item__dot activity-item__dot--danger" aria-hidden="true"></div>
-              <div class="activity-item__content">
-                <p class="activity-item__text">Failed login attempt from 192.168.1.x</p>
-                <div class="activity-item__meta">
-                  <span class="activity-item__time">3 hours ago</span>
-                  <span class="activity-item__tag">#security</span>
-                </div>
-              </div>
-            </div>
-            <div class="activity-item" role="article">
-              <div class="activity-item__dot activity-item__dot--primary" aria-hidden="true"></div>
-              <div class="activity-item__content">
-                <p class="activity-item__text">New comment on Project Alpha</p>
-                <div class="activity-item__meta">
-                  <span class="activity-item__time">5 hours ago</span>
-                  <span class="activity-item__tag">#projects</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- User Growth -->
-        <div class="card card--span-6">
-          <div class="card__header">
-            <div>
-              <h2 class="card__title">User Growth</h2>
-              <p class="card__subtitle">New signups this quarter</p>
-            </div>
-            <div class="card__actions">
-              <span class="badge badge--warning">+8.2%</span>
-              <button class="card__action-btn" aria-label="More options">&#8942;</button>
-            </div>
-          </div>
-          <div class="chart-placeholder" role="img" aria-label="User growth chart">
-            <div style="text-align:center;">
-              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2);" aria-hidden="true">&#128101;</span>
-              User Growth Chart Area
-            </div>
-          </div>
-        </div>
-
-        <!-- Performance -->
-        <div class="card card--span-6">
-          <div class="card__header">
-            <div>
-              <h2 class="card__title">Performance</h2>
-              <p class="card__subtitle">System response times</p>
-            </div>
-            <div class="card__actions">
-              <span class="badge badge--info">Healthy</span>
-              <button class="card__action-btn" aria-label="More options">&#8942;</button>
-            </div>
-          </div>
-          <div class="chart-placeholder" role="img" aria-label="Performance monitoring chart">
-            <div style="text-align:center;">
-              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2);" aria-hidden="true">&#9889;</span>
-              Performance Chart Area
-            </div>
-          </div>
-        </div>
-
-        <!-- Recent Orders Table -->
-        <div class="card card--span-12">
-          <div class="card__header">
-            <div>
-              <h2 class="card__title">Recent Orders</h2>
-              <p class="card__subtitle">Latest transactions across all channels</p>
-            </div>
-            <div class="card__actions">
-              <button class="card__action-btn" aria-label="Export orders">&#128194;</button>
-              <button class="card__action-btn" aria-label="View all orders">&#8594;</button>
-            </div>
-          </div>
-          <div class="table-wrapper" tabindex="0" role="region" aria-label="Orders table — scrollable">
-            <table class="table" aria-label="Recent orders">
-              <thead>
-                <tr>
-                  <th scope="col">Order ID</th>
-                  <th scope="col">Customer</th>
-                  <th scope="col">Product</th>
-                  <th scope="col">Amount</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>#ORD-7841</strong></td>
-                  <td>Alice Johnson</td>
-                  <td>Pro Plan</td>
-                  <td>$234.00</td>
-                  <td><span class="badge badge--success">Completed</span></td>
-                  <td>Sep 18, 2026</td>
-                </tr>
-                <tr>
-                  <td><strong>#ORD-7840</strong></td>
-                  <td>Bob Smith</td>
-                  <td>Starter Plan</td>
-                  <td>$89.50</td>
-                  <td><span class="badge badge--warning">Pending</span></td>
-                  <td>Sep 18, 2026</td>
-                </tr>
-                <tr>
-                  <td><strong>#ORD-7839</strong></td>
-                  <td>Carol White</td>
-                  <td>Enterprise</td>
-                  <td>$412.00</td>
-                  <td><span class="badge badge--success">Completed</span></td>
-                  <td>Sep 17, 2026</td>
-                </tr>
-                <tr>
-                  <td><strong>#ORD-7838</strong></td>
-                  <td>David Lee</td>
-                  <td>Starter Plan</td>
-                  <td>$67.25</td>
-                  <td><span class="badge badge--danger">Cancelled</span></td>
-                  <td>Sep 17, 2026</td>
-                </tr>
-                <tr>
-                  <td><strong>#ORD-7837</strong></td>
-                  <td>Eva Martinez</td>
-                  <td>Pro Plan</td>
-                  <td>$321.75</td>
-                  <td><span class="badge badge--success">Completed</span></td>
-                  <td>Sep 16, 2026</td>
-                </tr>
-                <tr>
-                  <td><strong>#ORD-7836</strong></td>
-                  <td>Frank Chen</td>
-                  <td>Enterprise</td>
-                  <td>$589.00</td>
-                  <td><span class="badge badge--success">Completed</span></td>
-                  <td>Sep 16, 2026</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="quick-stats">
-            <div class="quick-stat">
-              <p class="quick-stat__value">1,247</p>
-              <p class="quick-stat__label">Total Orders</p>
-            </div>
-            <div class="quick-stat">
-              <p class="quick-stat__value">$94.2K</p>
-              <p class="quick-stat__label">Total Revenue</p>
-            </div>
-            <div class="quick-stat">
-              <p class="quick-stat__value">98.4%</p>
-              <p class="quick-stat__label">Fulfillment</p>
-            </div>
-          </div>
-        </div>
-
+      <div class="footer-column">
+        <h3>Discover</h3>
+        <a href="#bestsellers">Bestsellers</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#categories">Categories</a>
+        <a href="#home">Gift Cards</a>
       </div>
-    </main>
-  </div>
 
-  <!-- ═══════════════ MOBILE BOTTOM NAV ═══════════════ -->
-  <nav class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#" class="mobile-nav__item mobile-nav__item--active" aria-current="page">
-      <span class="mobile-nav__icon" aria-hidden="true">&#9632;</span>
-      Home
-    </a>
-    <a href="#" class="mobile-nav__item">
-      <span class="mobile-nav__icon" aria-hidden="true">&#9733;</span>
-      Stats
-    </a>
-    <a href="#" class="mobile-nav__item">
-      <span class="mobile-nav__icon" aria-hidden="true">&#9881;</span>
-      Projects
-    </a>
-    <a href="#" class="mobile-nav__item">
-      <span class="mobile-nav__icon" aria-hidden="true">&#9993;</span>
-      Messages
-    </a>
-  </nav>
+      <div class="footer-column">
+        <h3>Information</h3>
+        <a href="#about">About Lumora</a>
+        <a href="#about">Our Journal</a>
+        <a href="#about">Shipping &amp; Returns</a>
+        <a href="#about">Contact Us</a>
+      </div>
 
-  <!-- ═══════════════ SCRIPTS ═══════════════ -->
-  <script>
-    (function () {
-      'use strict';
+      <div class="footer-column">
+        <h3>Customer Care</h3>
+        <a href="#about">Help Center</a>
+        <a href="#about">Track Order</a>
+        <a href="#about">Privacy Policy</a>
+        <a href="#about">Terms of Service</a>
+      </div>
+    </div>
 
-      // ── Theme Toggle with localStorage persistence ──
-      const html = document.documentElement;
-      const toggle = document.getElementById('themeToggle');
-      const STORAGE_KEY = 'pulse-theme';
+    <div class="container footer-bottom">
+      <p>
+        © 2026 Lumora Books. All rights reserved.
+      </p>
 
-      function getPreferredTheme() {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored) return stored;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-
-      function setTheme(theme) {
-        html.setAttribute('data-theme', theme);
-        localStorage.setItem(STORAGE_KEY, theme);
-        const meta = document.querySelector('meta[name="theme-color"][media*="prefers-color-scheme"]');
-        if (meta) {
-          meta.content = theme === 'dark' ? '#0c0e14' : '#f4f5f7';
-        }
-      }
-
-      // Apply stored/system theme on load
-      setTheme(getPreferredTheme());
-
-      toggle.addEventListener('click', function () {
-        const current = html.getAttribute('data-theme');
-        setTheme(current === 'dark' ? 'light' : 'dark');
-      });
-
-      // Listen for system theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-        if (!localStorage.getItem(STORAGE_KEY)) {
-          setTheme(e.matches ? 'dark' : 'light');
-        }
-      });
-
-      // ── Mobile Sidebar Toggle ──
-      const menuBtn = document.getElementById('mobileMenuBtn');
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('sidebarOverlay');
-
-      function openSidebar() {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        overlay.style.display = 'block';
-        menuBtn.classList.add('active');
-        menuBtn.setAttribute('aria-label', 'Close navigation menu');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeSidebar() {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        menuBtn.classList.remove('active');
-        menuBtn.setAttribute('aria-label', 'Open navigation menu');
-        document.body.style.overflow = '';
-        setTimeout(function () {
-          overlay.style.display = 'none';
-        }, 200);
-      }
-
-      menuBtn.addEventListener('click', function () {
-        if (sidebar.classList.contains('open')) {
-          closeSidebar();
-        } else {
-          openSidebar();
-        }
-      });
-
-      overlay.addEventListener('click', closeSidebar);
-
-      // Close sidebar on Escape key
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
-          closeSidebar();
-          menuBtn.focus();
-        }
-      });
-
-      // Close sidebar on resize to desktop
-      var resizeTimer;
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-          if (window.innerWidth >= 1024 && sidebar.classList.contains('open')) {
-            closeSidebar();
-          }
-        }, 100);
-      });
-    })();
-  </script>
+      <p>
+        Made for curious minds.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
