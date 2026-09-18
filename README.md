@@ -30,9 +30,8 @@ LUMORA BOOKS presents a premium digital bookstore experience where users can exp
 
 | Screenshot | Viewport | Description |
 |:----------:|:--------:|:------------|
-|![alt text](<Screenshot 2026-09-18 041642-1.png>) | **1440 × 900** — Desktop | Full-width homepage with hero section, featured books grid, and complete navigation |
-|![alt text](<Screenshot 2026-09-18 041736-1.png>) | **1440 × 900** — Desktop | Shop page with multi-column product grid and category sidebar |
-| ![alt text](<Screenshot 2026-09-18 041759-1.png>) | **1440 × 900** — Desktop | Product detail view with side-by-side layout and editorial composition |
+|<img width="1345" height="628" alt="image" src="https://github.com/user-attachments/assets/a376bc3f-c155-42fe-899c-4b489b1d8a1a" />| **1440 × 900** — Desktop | Full-width homepage with hero section, featured books grid, and complete navigation |
+|<img width="1346" height="627" alt="image" src="https://github.com/user-attachments/assets/7c16f94b-eab8-4489-8ada-d33f20c26708" />| **1440 × 900** — Desktop | Shop page with multi-column product grid and category sidebar | **1440 × 900** — Desktop | Product detail view with side-by-side layout and editorial composition |
 
 
 
@@ -42,12 +41,9 @@ LUMORA BOOKS presents a premium digital bookstore experience where users can exp
 
 | Screenshot | Viewport | Description |
 |:----------:|:--------:|:------------|
-|![alt text](<Screenshot 2026-09-18 041828-1.png>) | **375 × 812** — iPhone | Mobile home screen with stacked layout, bottom navigation bar, and hamburger menu |
-| ![alt text](<Screenshot 2026-09-18 041849-1.png>) | **375 × 812** — iPhone | Mobile shop view with single-column product cards and touch-friendly buttons |
-| ![alt text](<Screenshot 2026-09-18 041907-1.png>) | **375 × 812** — iPhone | Mobile cart / detail view with compact UI and full-width call-to-action |
-
-> **Note:** Replace `image-3.png`, `image-4.png`, and `image-5.png` with your actual screenshot file paths after capturing them from the browser.
-
+| <img width="252" height="516" alt="image" src="https://github.com/user-attachments/assets/7dbe5a63-9944-4360-b927-27de7a0f5cdc" />| **375 × 812** — iPhone | Mobile home screen with stacked layout, bottom navigation bar, and hamburger menu |
+| <img width="248" height="513" alt="image" src="https://github.com/user-attachments/assets/9a5699ea-8072-4aae-819b-349296d9e44d" />| **375 × 812** — iPhone | Mobile shop view with single-column product cards and touch-friendly buttons |
+| <img width="248" height="515" alt="image" src="https://github.com/user-attachments/assets/f9e01402-033a-49e7-8a3f-5904a03d46ce" />| **375 × 812** — iPhone | Mobile cart / detail view with compact UI and full-width call-to-action |
 
 
 The design combines:
