@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Cart — Lumora</title>
+
+  <meta
+    name="description"
+    content="Review your selected books and complete your Lumora order."
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Cart CSS -->
+  <link rel="stylesheet" href="../css/cart.css">
+
+  <!-- Theme Script -->
+  <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+  <!-- Decorative Background -->
+  <div class="background-orb orb-one"></div>
+  <div class="background-orb orb-two"></div>
+  <div class="background-orb orb-three"></div>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="site-header">
+    <div class="container navbar">
+
+      <a href="../index.html" class="brand" aria-label="Lumora Home">
+        <span class="brand-icon">
+          <i class="fa-solid fa-book-open"></i>
+        </span>
+
+        <span class="brand-name">
+          Lumora<span>.</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="../index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="books.html">Bestsellers</a>
+        <a href="newbooks.html">New Arrivals</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="search.html" class="nav-icon" aria-label="Search books">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="account.html" class="nav-icon" aria-label="Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a href="cart.html" class="nav-icon cart-icon active" aria-label="Shopping cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="cart-hero">
+      <div class="container">
+
+        <span class="eyebrow">
+          YOUR READING LIST
+        </span>
+
+        <h1>
+          Your cart,
+          <em>carefully curated.</em>
+        </h1>
+
+        <p>
+          Review your selected books and prepare your next reading journey.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Cart Content -->
+    <section class="cart-section">
+      <div class="container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Shopping Cart</span>
+        </div>
+
+        <div class="cart-layout">
+
+          <!-- ================= CART ITEMS ================= -->
+
+          <div class="cart-main">
+
+            <div class="cart-heading-row">
+              <div>
+                <span class="section-label">YOUR SELECTION</span>
+                <h2>Shopping cart</h2>
+              </div>
+
+              <span class="item-count-label" id="itemCountLabel">
+                0 items
+              </span>
+            </div>
+
+            <!-- Cart Items -->
+            <div class="cart-items" id="cartItems"></div>
+
+            <!-- Empty Cart -->
+            <div class="empty-cart hidden" id="emptyCart">
+
+              <div class="empty-cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+
+              <h2>Your cart is feeling light.</h2>
+
+              <p>
+                Discover a few thoughtful reads and bring them home.
+              </p>
+
+              <a href="books.html" class="primary-button">
+                Explore books
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+            <!-- Continue Shopping -->
+            <a href="books.html" class="continue-shopping">
+              <i class="fa-solid fa-arrow-left"></i>
+              Continue shopping
+            </a>
+
+          </div>
+
+
+          <!-- ================= ORDER SUMMARY ================= -->
+
+          <aside class="cart-summary">
+
+            <div class="summary-header">
+              <span class="section-label">ORDER DETAILS</span>
+              <h2>Summary</h2>
+            </div>
+
+            <div class="summary-lines">
+
+              <div class="summary-line">
+                <span>Subtotal</span>
+                <strong id="subtotal">₹0</strong>
+              </div>
+
+              <div class="summary-line">
+                <span>Shipping</span>
+                <strong id="shipping">₹0</strong>
+              </div>
+
+              <div class="summary-line discount-line hidden" id="discountLine">
+                <span>Discount</span>
+                <strong id="discount">-₹0</strong>
+              </div>
+
+            </div>
+
+            <!-- Free Shipping Notice -->
+            <div class="shipping-notice" id="shippingNotice">
+              <i class="fa-solid fa-truck-fast"></i>
+
+              <p>
+                Add books worth <strong id="freeShippingAmount">₹500</strong>
+                more for free shipping.
+              </p>
+            </div>
+
+            <!-- Coupon -->
+            <div class="coupon-section">
+
+              <label for="couponInput">
+                Have a coupon?
+              </label>
+
+              <div class="coupon-input-wrapper">
+                <input
+                  type="text"
+                  id="couponInput"
+                  placeholder="Enter coupon code"
+                  autocomplete="off"
+                >
+
+                <button id="applyCoupon" type="button">
+                  Apply
+                </button>
+              </div>
+
+              <p class="coupon-message" id="couponMessage"></p>
+
+            </div>
+
+            <!-- Total -->
+            <div class="summary-total">
+              <span>Total</span>
+              <strong id="total">₹0</strong>
+            </div>
+
+            <!-- Checkout Button -->
+            <button class="checkout-button" id="checkoutButton" type="button">
+              <span>Proceed to checkout</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <div class="secure-checkout">
+              <i class="fa-solid fa-lock"></i>
+              Secure and encrypted checkout
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+              <span>We accept</span>
+
+              <div class="payment-icons">
+                <span><i class="fa-brands fa-cc-visa"></i></span>
+                <span><i class="fa-brands fa-cc-mastercard"></i></span>
+                <span><i class="fa-brands fa-cc-amex"></i></span>
+                <span><i class="fa-solid fa-wallet"></i></span>
+              </div>
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Trust Section -->
+    <section class="cart-trust-section">
+      <div class="container">
+
+        <div class="trust-grid">
+
+          <div class="trust-card">
+            <div class="trust-icon">
+              <i class="fa-solid fa-box"></i>
+            </div>
+
+            <div>
+              <h3>Thoughtfully packed</h3>
+              <p>Every order is prepared with care.</p>
+            </div>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <div>
+              <h3>Reliable delivery</h3>
+              <p>Simple, transparent delivery updates.</p>
+            </div>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <div>
+              <h3>Reader support</h3>
+              <p>We're here when you need us.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="brand">
+            <span class="brand-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </span>
+
+            <span class="brand-name">
+              Lumora<span>.</span>
+            </span>
+          </a>
+
+          <p>
+            A quiet corner for curious minds, timeless stories,
+            and new perspectives.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <a href="books.html">All Books</a>
+          <a href="categories.html">Categories</a>
+          <a href="newbooks.html">New Arrivals</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Lumora</h3>
+          <a href="journal.html">Journal</a>
+          <a href="account.html">My Account</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Visit</h3>
+          <span>hello@lumora.books</span>
+          <span>Mon–Fri, 9am–6pm</span>
+          <span>Made for readers.</span>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Lumora Books. Demo project.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-check"></i>
+    <span id="toastMessage">Cart updated.</span>
+  </div>
+
+
+  <!-- Cart JavaScript -->
+  <script src="../js/cart.js"></script>
+
+</body>
+</html>

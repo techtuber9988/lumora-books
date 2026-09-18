@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Explore Categories — Lumora Books</title>
+
+  <meta
+    name="description"
+    content="Explore Lumora Books categories and discover your next favourite story."
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../css/categories.css">
+
+  <!-- Theme Script -->
+  <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="site-header">
+    <div class="container navbar">
+
+      <!-- Brand -->
+      <a href="../index.html" class="brand" aria-label="Lumora Books Home">
+        <span class="brand-icon">
+          <i class="fa-solid fa-book-open"></i>
+        </span>
+
+        <span class="brand-name">
+          Lumora<span>.</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="../index.html">Home</a>
+        <a href="categories.html" class="active">Categories</a>
+        <a href="books.html">Bestsellers</a>
+        <a href="newbooks.html">New Arrivals</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="nav-actions">
+
+        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="search.html" class="nav-icon" aria-label="Search Books">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="account.html" class="nav-icon" aria-label="Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open Navigation Menu"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= MAIN CONTENT ================= -->
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="category-hero">
+      <div class="container">
+
+        <div class="hero-top">
+          <div>
+            <span class="eyebrow">Explore by interest</span>
+
+            <h1 class="page-title">
+              Find your next
+              <em>obsession.</em>
+            </h1>
+          </div>
+
+          <a href="books.html" class="hero-link">
+            Explore all books
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <p class="hero-description">
+          Browse thoughtfully curated collections and discover stories,
+          ideas, and perspectives that stay with you.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+      <div class="container">
+
+        <div class="categories-grid">
+
+          <!-- Fiction -->
+          <a
+            href="category.html?category=Fiction"
+            class="category-card category-fiction"
+          >
+            <div class="card-top">
+              <span class="category-icon">
+                <i class="fa-solid fa-feather-pointed"></i>
+              </span>
+
+              <span class="card-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+
+            <div class="card-content">
+              <h2>Fiction</h2>
+
+              <p>
+                Stories that stay with you.
+              </p>
+
+              <span class="book-count">
+                4,280 books
+              </span>
+            </div>
+          </a>
+
+
+          <!-- Business -->
+          <a
+            href="category.html?category=Business"
+            class="category-card category-business"
+          >
+            <div class="card-top">
+              <span class="category-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </span>
+
+              <span class="card-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+
+            <div class="card-content">
+              <h2>Business</h2>
+
+              <p>
+                Ideas that move you forward.
+              </p>
+
+              <span class="book-count">
+                2,150 books
+              </span>
+            </div>
+          </a>
+
+
+          <!-- Mind & Wellness -->
+          <a
+            href="category.html?category=Mind%20%26%20Wellness"
+            class="category-card category-wellness"
+          >
+            <div class="card-top">
+              <span class="category-icon">
+                <i class="fa-solid fa-brain"></i>
+              </span>
+
+              <span class="card-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+
+            <div class="card-content">
+              <h2>Mind &amp; Wellness</h2>
+
+              <p>
+                Build a better inner world.
+              </p>
+
+              <span class="book-count">
+                1,890 books
+              </span>
+            </div>
+          </a>
+
+
+          <!-- Art & Design -->
+          <a
+            href="category.html?category=Art%20%26%20Design"
+            class="category-card category-art"
+          >
+            <div class="card-top">
+              <span class="category-icon">
+                <i class="fa-solid fa-palette"></i>
+              </span>
+
+              <span class="card-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+
+            <div class="card-content">
+              <h2>Art &amp; Design</h2>
+
+              <p>
+                See the world differently.
+              </p>
+
+              <span class="book-count">
+                1,240 books
+              </span>
+            </div>
+          </a>
+
+
+          <!-- Science & Technology -->
+          <a
+            href="category.html?category=Science%20%26%20Technology"
+            class="category-card category-science"
+          >
+            <div class="card-top">
+              <span class="category-icon">
+                <i class="fa-solid fa-atom"></i>
+              </span>
+
+              <span class="card-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+
+            <div class="card-content">
+              <h2>Science &amp; Technology</h2>
+
+              <p>
+                Understand the world around you.
+              </p>
+
+              <span class="book-count">
+                3,420 books
+              </span>
+            </div>
+          </a>
+
+
+          <!-- History -->
+          <a
+            href="category.html?category=History"
+            class="category-card category-history"
+          >
+            <div class="card-top">
+              <span class="category-icon">
+                <i class="fa-solid fa-landmark"></i>
+              </span>
+
+              <span class="card-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+
+            <div class="card-content">
+              <h2>History</h2>
+
+              <p>
+                Discover the stories behind our world.
+              </p>
+
+              <span class="book-count">
+                2,780 books
+              </span>
+            </div>
+          </a>
+
+
+          <!-- Lifestyle -->
+          <a
+            href="category.html?category=Lifestyle"
+            class="category-card category-lifestyle"
+          >
+            <div class="card-top">
+              <span class="category-icon">
+                <i class="fa-solid fa-sun"></i>
+              </span>
+
+              <span class="card-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+
+            <div class="card-content">
+              <h2>Lifestyle</h2>
+
+              <p>
+                Small ideas for a richer life.
+              </p>
+
+              <span class="book-count">
+                1,675 books
+              </span>
+            </div>
+          </a>
+
+
+          <!-- Poetry -->
+          <a
+            href="category.html?category=Poetry"
+            class="category-card category-poetry"
+          >
+            <div class="card-top">
+              <span class="category-icon">
+                <i class="fa-solid fa-pen-nib"></i>
+              </span>
+
+              <span class="card-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+
+            <div class="card-content">
+              <h2>Poetry</h2>
+
+              <p>
+                Words that make you feel.
+              </p>
+
+              <span class="book-count">
+                980 books
+              </span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Bottom CTA -->
+    <section class="category-cta">
+      <div class="container">
+
+        <div class="cta-content">
+          <span class="eyebrow">Still looking?</span>
+
+          <h2>
+            There is always
+            another world to discover.
+          </h2>
+
+          <p>
+            Explore the complete Lumora catalogue and find a book
+            that feels like it was waiting for you.
+          </p>
+
+          <a href="books.html" class="primary-button">
+            Explore all books
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="cta-decoration">
+          <span>✦</span>
+          <span>✧</span>
+          <span>✦</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="brand">
+            <span class="brand-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </span>
+
+            <span class="brand-name">
+              Lumora<span>.</span>
+            </span>
+          </a>
+
+          <p>
+            A quiet corner for curious minds, timeless stories,
+            and new perspectives.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <a href="books.html">All Books</a>
+          <a href="categories.html">Categories</a>
+          <a href="newbooks.html">New Arrivals</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Lumora</h3>
+          <a href="journal.html">Journal</a>
+          <a href="account.html">My Account</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Visit</h3>
+          <span>hello@lumora.books</span>
+          <span>Mon–Fri, 9am–6pm</span>
+          <span>Made for readers.</span>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Lumora Books. Demo project.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script src="../js/categories.js"></script>
+
+</body>
+</html>

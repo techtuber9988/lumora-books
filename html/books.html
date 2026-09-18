@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Explore All Books — Lumora</title>
+
+  <meta
+    name="description"
+    content="Explore all books at Lumora. Discover bestselling reads, timeless classics, and fresh new voices."
+  >
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../css/books.css">
+
+  <!-- Theme Script -->
+  <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="site-header">
+    <div class="container navbar">
+
+      <a href="../index.html" class="brand" aria-label="Lumora Home">
+        <span class="brand-icon">
+          <i class="fa-solid fa-book-open"></i>
+        </span>
+
+        <span class="brand-name">
+          Lumora<span>.</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="../index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="books.html" class="active">Bestsellers</a>
+        <a href="newbooks.html">New Arrivals</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="search.html" class="nav-icon" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="account.html" class="nav-icon" aria-label="Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a href="cart.html" class="nav-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main>
+
+    <!-- Page Heading -->
+    <section class="books-hero">
+      <div class="container">
+
+        <div class="hero-heading-row">
+
+          <div>
+            <span class="eyebrow">The complete collection</span>
+
+            <h1>
+              Books worth
+              <em>knowing.</em>
+            </h1>
+
+            <p class="hero-description">
+              Explore thoughtful reads, bestselling ideas, and stories
+              that deserve a place on your shelf.
+            </p>
+          </div>
+
+          <div class="hero-stat">
+            <strong id="bookTotal">0</strong>
+            <span>books to explore</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Toolbar -->
+    <section class="books-toolbar-section">
+      <div class="container">
+
+        <div class="books-toolbar">
+
+          <!-- Search -->
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="search"
+              id="bookSearch"
+              placeholder="Search by title or author..."
+              aria-label="Search books"
+            >
+          </div>
+
+          <!-- Category Filter -->
+          <div class="filter-wrapper">
+            <label for="categoryFilter">Category</label>
+
+            <select id="categoryFilter">
+              <option value="all">All Categories</option>
+              <option value="fiction">Fiction</option>
+              <option value="business">Business</option>
+              <option value="wellness">Mind &amp; Wellness</option>
+              <option value="art">Art &amp; Design</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="science">Science &amp; Technology</option>
+            </select>
+          </div>
+
+          <!-- Sort -->
+          <div class="filter-wrapper">
+            <label for="sortBooks">Sort by</label>
+
+            <select id="sortBooks">
+              <option value="featured">Featured</option>
+              <option value="title-asc">Title: A–Z</option>
+              <option value="title-desc">Title: Z–A</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-pills" aria-label="Quick category filters">
+          <button class="category-pill active" data-category="all">
+            All Books
+          </button>
+
+          <button class="category-pill" data-category="fiction">
+            Fiction
+          </button>
+
+          <button class="category-pill" data-category="business">
+            Business
+          </button>
+
+          <button class="category-pill" data-category="wellness">
+            Mind &amp; Wellness
+          </button>
+
+          <button class="category-pill" data-category="art">
+            Art &amp; Design
+          </button>
+
+          <button class="category-pill" data-category="lifestyle">
+            Lifestyle
+          </button>
+
+          <button class="category-pill" data-category="science">
+            Science
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Books Listing -->
+    <section class="books-section">
+      <div class="container">
+
+        <div class="section-topline">
+          <p id="resultsText">Showing all books</p>
+
+          <span class="view-label">
+            <i class="fa-solid fa-grid-2"></i>
+            Catalogue view
+          </span>
+        </div>
+
+        <!-- Loading Skeletons -->
+        <div class="books-grid skeleton-grid" id="skeletonGrid">
+
+          <div class="book-skeleton">
+            <div class="skeleton skeleton-cover"></div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line short"></div>
+          </div>
+
+          <div class="book-skeleton">
+            <div class="skeleton skeleton-cover"></div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line short"></div>
+          </div>
+
+          <div class="book-skeleton">
+            <div class="skeleton skeleton-cover"></div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line short"></div>
+          </div>
+
+          <div class="book-skeleton">
+            <div class="skeleton skeleton-cover"></div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line short"></div>
+          </div>
+
+        </div>
+
+        <!-- Actual Books -->
+        <div
+          class="books-grid"
+          id="booksGrid"
+          aria-live="polite"
+        ></div>
+
+        <!-- Empty State -->
+        <div class="empty-state hidden" id="emptyState">
+          <div class="empty-icon">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+
+          <h2>No books found</h2>
+
+          <p>
+            Try a different search term or choose another category.
+          </p>
+
+          <button class="reset-button" id="resetFilters">
+            Reset filters
+          </button>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-banner hidden" id="errorBanner">
+          <i class="fa-solid fa-circle-exclamation"></i>
+
+          <div>
+            <strong>Catalogue unavailable</strong>
+            <p>
+              We could not load the books right now. Please try again.
+            </p>
+          </div>
+
+          <button id="retryButton">
+            Retry
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Bottom CTA -->
+    <section class="books-cta-section">
+      <div class="container">
+
+        <div class="books-cta">
+
+          <div>
+            <span class="eyebrow">A good book stays</span>
+
+            <h2>
+              Your next favourite
+              is waiting here.
+            </h2>
+
+            <p>
+              Save your discoveries and build a reading list
+              filled with stories that matter.
+            </p>
+          </div>
+
+          <a href="categories.html" class="cta-button">
+            Browse categories
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="brand">
+            <span class="brand-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </span>
+
+            <span class="brand-name">
+              Lumora<span>.</span>
+            </span>
+          </a>
+
+          <p>
+            A quiet corner for curious minds, timeless stories,
+            and new perspectives.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <a href="books.html">All Books</a>
+          <a href="categories.html">Categories</a>
+          <a href="newbooks.html">New Arrivals</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Lumora</h3>
+          <a href="journal.html">Journal</a>
+          <a href="account.html">My Account</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Visit</h3>
+          <span>hello@lumora.books</span>
+          <span>Mon–Fri, 9am–6pm</span>
+          <span>Made for readers.</span>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Lumora Books. Demo project.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Page JavaScript -->
+  <script src="../js/books.js"></script>
+
+</body>
+</html>

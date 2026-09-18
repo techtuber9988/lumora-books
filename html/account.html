@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Account — Lumora</title>
+
+  <meta
+    name="description"
+    content="Manage your Lumora account, profile details, preferences, and reading activity."
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Account CSS -->
+  <link rel="stylesheet" href="../css/account.css">
+
+  <!-- Theme Script -->
+  <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="site-header">
+    <div class="container navbar">
+
+      <a href="../index.html" class="brand" aria-label="Lumora Home">
+        <span class="brand-icon">
+          <i class="fa-solid fa-book-open"></i>
+        </span>
+
+        <span class="brand-name">
+          Lumora<span>.</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="../index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="books.html">Bestsellers</a>
+        <a href="newbooks.html">New Arrivals</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="search.html" class="nav-icon" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="account.html" class="nav-icon active-icon" aria-label="Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a href="cart.html" class="nav-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main>
+
+    <!-- Account Hero -->
+    <section class="account-hero">
+      <div class="container">
+
+        <div class="hero-content">
+          <span class="eyebrow">Your Lumora space</span>
+
+          <h1>
+            Welcome back,
+            <em id="heroName">Reader.</em>
+          </h1>
+
+          <p>
+            Manage your profile, preferences, and personal reading space
+            from one quiet corner.
+          </p>
+        </div>
+
+        <div class="hero-decoration">
+          <i class="fa-solid fa-book-open"></i>
+          <span></span>
+          <i class="fa-solid fa-feather-pointed"></i>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Account Layout -->
+    <section class="account-section">
+      <div class="container account-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="account-sidebar">
+
+          <div class="profile-card">
+
+            <div class="profile-avatar" id="profileAvatar">
+              A
+            </div>
+
+            <div class="profile-summary">
+              <h2 id="sidebarName">Ayush Reader</h2>
+              <p id="sidebarEmail">reader@lumora.books</p>
+            </div>
+
+            <span class="member-badge">
+              <i class="fa-solid fa-sparkles"></i>
+              Lumora Member
+            </span>
+
+          </div>
+
+
+          <nav class="account-menu" aria-label="Account Sections">
+
+            <button class="account-menu-item active" data-section="profile">
+              <span>
+                <i class="fa-regular fa-user"></i>
+                Profile
+              </span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <button class="account-menu-item" data-section="orders">
+              <span>
+                <i class="fa-solid fa-box-open"></i>
+                Orders &amp; Purchases
+              </span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <button class="account-menu-item" data-section="preferences">
+              <span>
+                <i class="fa-solid fa-sliders"></i>
+                Preferences
+              </span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <button class="account-menu-item" data-section="security">
+              <span>
+                <i class="fa-solid fa-shield-halved"></i>
+                Security
+              </span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+          </nav>
+
+
+          <div class="sidebar-note">
+            <i class="fa-solid fa-bookmark"></i>
+
+            <div>
+              <strong>Keep discovering.</strong>
+              <p>
+                Your next favourite story may be one click away.
+              </p>
+            </div>
+          </div>
+
+
+          <button class="logout-button" id="logoutButton">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Sign out
+          </button>
+
+        </aside>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="account-content">
+
+          <!-- ================= PROFILE PANEL ================= -->
+
+          <section class="account-panel active-panel" id="profilePanel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-eyebrow">Personal details</span>
+                <h2>Profile settings</h2>
+                <p>
+                  Keep your account information up to date.
+                </p>
+              </div>
+
+              <div class="panel-symbol">
+                <i class="fa-regular fa-id-card"></i>
+              </div>
+            </div>
+
+
+            <form id="profileForm" class="account-form">
+
+              <div class="form-grid">
+
+                <div class="form-group">
+                  <label for="fullName">Full name</label>
+
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-user"></i>
+
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      placeholder="Enter your full name"
+                      value="Ayush Reader"
+                      required
+                    >
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="username">Username</label>
+
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-at"></i>
+
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      placeholder="Choose a username"
+                      value="ayushreader"
+                      required
+                    >
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="email">Email address</label>
+
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your email"
+                      value="reader@lumora.books"
+                      required
+                    >
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="phone">Phone number</label>
+
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-phone"></i>
+
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="+91 00000 00000"
+                      value="+91 98765 43210"
+                    >
+                  </div>
+                </div>
+
+
+                <div class="form-group full-width">
+                  <label for="bio">About you</label>
+
+                  <textarea
+                    id="bio"
+                    name="bio"
+                    rows="4"
+                    placeholder="Tell us a little about your reading interests..."
+                  >A curious reader who enjoys thoughtful stories, creative ideas, and books that inspire new perspectives.</textarea>
+                </div>
+
+              </div>
+
+
+              <div class="form-footer">
+                <p class="form-note">
+                  <i class="fa-solid fa-lock"></i>
+                  Your information is stored locally in this demo.
+                </p>
+
+                <button type="submit" class="primary-button">
+                  Save changes
+                  <i class="fa-solid fa-check"></i>
+                </button>
+              </div>
+
+              <div class="success-message" id="profileSuccess">
+                <i class="fa-solid fa-circle-check"></i>
+                Profile updated successfully.
+              </div>
+
+            </form>
+
+          </section>
+
+
+          <!-- ================= ORDERS PANEL ================= -->
+
+          <section class="account-panel" id="ordersPanel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-eyebrow">Your activity</span>
+                <h2>Orders &amp; purchases</h2>
+                <p>
+                  Review your recent Lumora purchases and saved books.
+                </p>
+              </div>
+
+              <div class="panel-symbol">
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+            </div>
+
+
+            <div class="orders-empty">
+
+              <div class="empty-illustration">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+
+              <h3>No orders yet</h3>
+
+              <p>
+                Your book purchases will appear here once you discover
+                something worth taking home.
+              </p>
+
+              <a href="books.html" class="secondary-button">
+                Explore books
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </section>
+
+
+          <!-- ================= PREFERENCES PANEL ================= -->
+
+          <section class="account-panel" id="preferencesPanel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-eyebrow">Personalize Lumora</span>
+                <h2>Reading preferences</h2>
+                <p>
+                  Adjust how your Lumora experience feels.
+                </p>
+              </div>
+
+              <div class="panel-symbol">
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+            </div>
+
+
+            <div class="preference-list">
+
+              <div class="preference-item">
+                <div class="preference-icon">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+
+                <div class="preference-content">
+                  <h3>Reading recommendations</h3>
+                  <p>
+                    Receive curated book recommendations and new arrivals.
+                  </p>
+                </div>
+
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="recommendationToggle"
+                    checked
+                  >
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+
+              <div class="preference-item">
+                <div class="preference-icon">
+                  <i class="fa-solid fa-tag"></i>
+                </div>
+
+                <div class="preference-content">
+                  <h3>Offers and updates</h3>
+                  <p>
+                    Get notified about special offers and seasonal collections.
+                  </p>
+                </div>
+
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="offersToggle"
+                    checked
+                  >
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+
+              <div class="preference-item">
+                <div class="preference-icon">
+                  <i class="fa-solid fa-moon"></i>
+                </div>
+
+                <div class="preference-content">
+                  <h3>Reading mode</h3>
+                  <p>
+                    Keep the calm, light Lumora appearance across the website.
+                  </p>
+                </div>
+
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="readingModeToggle"
+                  >
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+            </div>
+
+
+            <div class="preference-save-row">
+              <span id="preferenceStatus">
+                Preferences are saved automatically.
+              </span>
+
+              <button class="primary-button" id="savePreferences">
+                Save preferences
+                <i class="fa-solid fa-check"></i>
+              </button>
+            </div>
+
+          </section>
+
+
+          <!-- ================= SECURITY PANEL ================= -->
+
+          <section class="account-panel" id="securityPanel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-eyebrow">Account protection</span>
+                <h2>Security settings</h2>
+                <p>
+                  Manage your password and account security preferences.
+                </p>
+              </div>
+
+              <div class="panel-symbol">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+            </div>
+
+
+            <form id="securityForm" class="account-form">
+
+              <div class="form-group">
+                <label for="currentPassword">Current password</label>
+
+                <div class="input-wrapper password-wrapper">
+                  <i class="fa-solid fa-lock"></i>
+
+                  <input
+                    type="password"
+                    id="currentPassword"
+                    placeholder="Enter current password"
+                  >
+
+                  <button
+                    type="button"
+                    class="password-toggle"
+                    data-target="currentPassword"
+                    aria-label="Show password"
+                  >
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+
+              <div class="form-grid">
+
+                <div class="form-group">
+                  <label for="newPassword">New password</label>
+
+                  <div class="input-wrapper password-wrapper">
+                    <i class="fa-solid fa-key"></i>
+
+                    <input
+                      type="password"
+                      id="newPassword"
+                      placeholder="Enter new password"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-target="newPassword"
+                      aria-label="Show password"
+                    >
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="confirmPassword">Confirm password</label>
+
+                  <div class="input-wrapper password-wrapper">
+                    <i class="fa-solid fa-check-double"></i>
+
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      placeholder="Confirm new password"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-target="confirmPassword"
+                      aria-label="Show password"
+                    >
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="security-info">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>
+                  This is a frontend demonstration. Password changes are
+                  simulated and are not sent to a real server.
+                </p>
+              </div>
+
+
+              <div class="form-footer">
+                <span></span>
+
+                <button type="submit" class="primary-button">
+                  Update password
+                  <i class="fa-solid fa-shield"></i>
+                </button>
+              </div>
+
+              <div class="success-message" id="securitySuccess">
+                <i class="fa-solid fa-circle-check"></i>
+                Password updated successfully.
+              </div>
+
+              <div class="error-message" id="securityError">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Please check your password details.
+              </div>
+
+            </form>
+
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= ACCOUNT CTA ================= -->
+
+    <section class="account-cta-section">
+      <div class="container">
+
+        <div class="account-cta">
+
+          <div class="cta-icon">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+
+          <div class="cta-content">
+            <span class="eyebrow">A world of stories</span>
+
+            <h2>
+              There is always more
+              <em>to discover.</em>
+            </h2>
+
+            <p>
+              Explore books selected for curious minds and thoughtful readers.
+            </p>
+          </div>
+
+          <a href="books.html" class="cta-button">
+            Explore collection
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="brand">
+            <span class="brand-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </span>
+
+            <span class="brand-name">
+              Lumora<span>.</span>
+            </span>
+          </a>
+
+          <p>
+            A quiet corner for curious minds, timeless stories,
+            and new perspectives.
+          </p>
+        </div>
+
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <a href="books.html">All Books</a>
+          <a href="categories.html">Categories</a>
+          <a href="newbooks.html">New Arrivals</a>
+        </div>
+
+
+        <div class="footer-column">
+          <h3>Lumora</h3>
+          <a href="journal.html">Journal</a>
+          <a href="account.html">My Account</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+
+        <div class="footer-column">
+          <h3>Visit</h3>
+          <span>hello@lumora.books</span>
+          <span>Mon–Fri, 9am–6pm</span>
+          <span>Made for readers.</span>
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+        <span>© 2026 Lumora Books. Demo project.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">Changes saved successfully.</span>
+  </div>
+
+
+  <!-- Account JavaScript -->
+  <script src="../js/account.js"></script>
+
+</body>
+</html>

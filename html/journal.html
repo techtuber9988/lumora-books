@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lumora Journal — Stories Worth Reading</title>
+
+  <meta
+    name="description"
+    content="Read the Lumora Journal for thoughtful essays, author conversations, reading recommendations, and ideas worth exploring."
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Journal CSS -->
+  <link rel="stylesheet" href="../css/journal.css">
+
+  <!-- Theme Script -->
+  <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+    <div class="container navbar">
+
+      <a href="../index.html" class="brand" aria-label="Lumora Home">
+
+        <span class="brand-icon">
+          <i class="fa-solid fa-book-open"></i>
+        </span>
+
+        <span class="brand-name">
+          Lumora<span>.</span>
+        </span>
+
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="../index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="books.html">Bestsellers</a>
+        <a href="newbooks.html">New Arrivals</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="search.html" class="nav-icon" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="account.html" class="nav-icon" aria-label="Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a href="cart.html" class="nav-icon cart-icon" aria-label="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
+  <main>
+
+    <!-- ===================================================
+         JOURNAL HERO
+    ==================================================== -->
+
+    <section class="journal-hero">
+      <div class="container">
+
+        <div class="journal-hero-content">
+
+          <div class="journal-hero-copy">
+
+            <span class="eyebrow">
+              The Lumora Journal
+            </span>
+
+            <h1>
+              A slower life
+              <br>
+              begins with a
+              <em>better story.</em>
+            </h1>
+
+            <p>
+              Thoughtful essays, author conversations, and carefully
+              curated recommendations for curious minds.
+            </p>
+
+            <a href="#latest-stories" class="primary-button">
+              Explore stories
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+          <div class="journal-cover-wrapper">
+
+            <div class="journal-orbit orbit-one"></div>
+            <div class="journal-orbit orbit-two"></div>
+
+            <div class="journal-cover">
+
+              <div class="journal-cover-top">
+                <span>LUMORA JOURNAL</span>
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+
+              <div class="journal-cover-line"></div>
+
+              <h2>
+                The beauty of
+                <em>reading slowly.</em>
+              </h2>
+
+              <p class="journal-issue">
+                Issue No. 08
+              </p>
+
+              <div class="journal-cover-bottom">
+                <span>Essay Collection</span>
+                <span>2026</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===================================================
+         INTRODUCTION
+    ==================================================== -->
+
+    <section class="journal-intro">
+      <div class="container">
+
+        <div class="intro-grid">
+
+          <div class="intro-label">
+            <span class="eyebrow">
+              Why we write
+            </span>
+          </div>
+
+          <div class="intro-content">
+
+            <h2>
+              Books open doors.
+              <br>
+              Stories help us
+              <em>walk through them.</em>
+            </h2>
+
+            <p>
+              The Lumora Journal is a space for ideas, reflections,
+              and conversations that stay with you long after the
+              final page.
+            </p>
+
+            <p>
+              From quiet reading rituals to creative lives and
+              unforgettable authors, we explore the thoughts behind
+              the books we love.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===================================================
+         FEATURED STORY
+    ==================================================== -->
+
+    <section class="featured-story-section">
+      <div class="container">
+
+        <div class="section-heading-row">
+
+          <div>
+            <span class="eyebrow">
+              Featured story
+            </span>
+
+            <h2>
+              A little time
+              <em>for yourself.</em>
+            </h2>
+          </div>
+
+          <span class="issue-label">
+            Issue 08 / Essay
+          </span>
+
+        </div>
+
+        <article class="featured-story">
+
+          <div class="featured-story-visual">
+
+            <div class="visual-circle"></div>
+
+            <div class="visual-book">
+              <div class="visual-book-spine"></div>
+
+              <span>READING</span>
+
+              <strong>
+                Slowly
+              </strong>
+
+              <small>
+                A quiet guide to
+                meaningful reading
+              </small>
+            </div>
+
+            <span class="visual-note note-one">
+              Take your time.
+            </span>
+
+            <span class="visual-note note-two">
+              Turn the page.
+            </span>
+
+          </div>
+
+          <div class="featured-story-content">
+
+            <span class="story-category">
+              Reading Rituals
+            </span>
+
+            <h3>
+              The art of making
+              <em>time to read.</em>
+            </h3>
+
+            <p>
+              In a world that moves quickly, reading offers us
+              another rhythm. Discover simple ways to create a
+              reading ritual that feels personal, intentional,
+              and entirely your own.
+            </p>
+
+            <div class="story-meta">
+              <span>
+                <i class="fa-regular fa-clock"></i>
+                6 min read
+              </span>
+
+              <span>
+                <i class="fa-regular fa-calendar"></i>
+                June 18, 2026
+              </span>
+            </div>
+
+            <a href="#story-reading" class="text-link">
+              Read the essay
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ===================================================
+         LATEST STORIES
+    ==================================================== -->
+
+    <section class="latest-stories-section" id="latest-stories">
+      <div class="container">
+
+        <div class="section-heading-row">
+
+          <div>
+            <span class="eyebrow">
+              From the journal
+            </span>
+
+            <h2>
+              Stories worth
+              <em>staying for.</em>
+            </h2>
+          </div>
+
+          <p class="section-description">
+            Ideas, conversations, and recommendations
+            from the Lumora editorial desk.
+          </p>
+
+        </div>
+
+        <div class="stories-grid">
+
+          <!-- Story 1 -->
+          <article class="story-card">
+
+            <div class="story-image story-image-one">
+              <span class="story-image-label">
+                Reading Rituals
+              </span>
+
+              <div class="story-image-object">
+                <i class="fa-solid fa-mug-hot"></i>
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+            </div>
+
+            <div class="story-card-content">
+
+              <div class="story-card-meta">
+                <span>Essay</span>
+                <span>5 min read</span>
+              </div>
+
+              <h3>
+                Why reading slowly
+                changes everything.
+              </h3>
+
+              <p>
+                Rediscover the pleasure of giving
+                one page your full attention.
+              </p>
+
+              <a href="#story-reading" class="story-link">
+                Read story
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Story 2 -->
+          <article class="story-card">
+
+            <div class="story-image story-image-two">
+              <span class="story-image-label">
+                Author Notes
+              </span>
+
+              <div class="story-image-object author-object">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+            </div>
+
+            <div class="story-card-content">
+
+              <div class="story-card-meta">
+                <span>Conversation</span>
+                <span>8 min read</span>
+              </div>
+
+              <h3>
+                In conversation with
+                a lifelong storyteller.
+              </h3>
+
+              <p>
+                On imagination, discipline, and
+                finding meaning in ordinary days.
+              </p>
+
+              <a href="#story-author" class="story-link">
+                Read story
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Story 3 -->
+          <article class="story-card">
+
+            <div class="story-image story-image-three">
+              <span class="story-image-label">
+                Book Notes
+              </span>
+
+              <div class="story-image-object">
+                <i class="fa-solid fa-bookmark"></i>
+              </div>
+            </div>
+
+            <div class="story-card-content">
+
+              <div class="story-card-meta">
+                <span>Recommendations</span>
+                <span>4 min read</span>
+              </div>
+
+              <h3>
+                Five books for your
+                next quiet weekend.
+              </h3>
+
+              <p>
+                A considered reading list for
+                slower mornings and longer evenings.
+              </p>
+
+              <a href="#story-books" class="story-link">
+                Read story
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===================================================
+         READING QUOTE
+    ==================================================== -->
+
+    <section class="journal-quote-section">
+      <div class="container">
+
+        <div class="journal-quote">
+
+          <span class="quote-mark">“</span>
+
+          <blockquote>
+            A book is not only something we read.
+            It is somewhere we go.
+          </blockquote>
+
+          <span class="quote-author">
+            — The Lumora Journal
+          </span>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===================================================
+         NEWSLETTER
+    ==================================================== -->
+
+    <section class="journal-newsletter-section">
+      <div class="container">
+
+        <div class="newsletter-card">
+
+          <div class="newsletter-copy">
+
+            <span class="eyebrow">
+              Stay curious
+            </span>
+
+            <h2>
+              A thoughtful note,
+              <em>now and then.</em>
+            </h2>
+
+            <p>
+              Receive new essays, reading recommendations,
+              and occasional notes from the Lumora Journal.
+            </p>
+
+          </div>
+
+          <form class="newsletter-form" id="newsletterForm">
+
+            <label for="newsletterEmail" class="sr-only">
+              Email address
+            </label>
+
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Your email address"
+              required
+            >
+
+            <button type="submit">
+              Subscribe
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </form>
+
+          <p class="newsletter-message" id="newsletterMessage"></p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a href="../index.html" class="brand">
+
+            <span class="brand-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </span>
+
+            <span class="brand-name">
+              Lumora<span>.</span>
+            </span>
+
+          </a>
+
+          <p>
+            A quiet corner for curious minds, timeless stories,
+            and new perspectives.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <a href="books.html">All Books</a>
+          <a href="categories.html">Categories</a>
+          <a href="newbooks.html">New Arrivals</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Lumora</h3>
+          <a href="journal.html">Journal</a>
+          <a href="account.html">My Account</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Visit</h3>
+          <span>hello@lumora.books</span>
+          <span>Mon–Fri, 9am–6pm</span>
+          <span>Made for readers.</span>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Lumora Books. Demo project.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Journal JavaScript -->
+  <script src="../js/journal.js"></script>
+
+</body>
+</html>

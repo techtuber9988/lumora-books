@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Search Books — Lumora</title>
+
+  <meta
+    name="description"
+    content="Search and discover your next favourite book at Lumora."
+  >
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Search Page CSS -->
+  <link rel="stylesheet" href="../css/search.css">
+
+  <!-- Theme Script -->
+  <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="site-header">
+    <div class="container navbar">
+
+      <a href="../index.html" class="brand" aria-label="Lumora Home">
+        <span class="brand-icon">
+          <i class="fa-solid fa-book-open"></i>
+        </span>
+
+        <span class="brand-name">
+          Lumora<span>.</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="../index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="books.html">Bestsellers</a>
+        <a href="newbooks.html">New Arrivals</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a
+          href="search.html"
+          class="nav-icon active-icon"
+          aria-label="Search"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a
+          href="account.html"
+          class="nav-icon"
+          aria-label="Account"
+        >
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <a
+          href="cart.html"
+          class="nav-icon cart-icon"
+          aria-label="Shopping Cart"
+        >
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main>
+
+    <!-- Search Hero -->
+    <section class="search-hero">
+      <div class="hero-orb orb-one"></div>
+      <div class="hero-orb orb-two"></div>
+
+      <div class="container">
+
+        <div class="search-hero-content">
+
+          <span class="eyebrow">
+            <span class="eyebrow-line"></span>
+            Find your next chapter
+          </span>
+
+          <h1>
+            Search for something
+            <em>meaningful.</em>
+          </h1>
+
+          <p>
+            Explore thoughtful stories, practical ideas, timeless classics,
+            and books that stay with you.
+          </p>
+
+        </div>
+
+        <!-- Main Search Window -->
+        <div class="search-window">
+
+          <div class="search-window-top">
+            <div class="window-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <span class="window-label">
+              LUMORA SEARCH
+            </span>
+
+            <i class="fa-solid fa-sparkles window-sparkle"></i>
+          </div>
+
+          <div class="search-input-area">
+
+            <i class="fa-solid fa-magnifying-glass search-main-icon"></i>
+
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Search books, authors, or categories..."
+              autocomplete="off"
+              aria-label="Search books"
+            >
+
+            <button
+              class="clear-search"
+              id="clearSearch"
+              aria-label="Clear search"
+              title="Clear search"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <button
+              class="search-submit"
+              id="searchSubmit"
+              aria-label="Submit search"
+            >
+              Search
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+          <div class="search-suggestions">
+            <span>Try searching:</span>
+
+            <button class="suggestion" data-search="fiction">
+              Fiction
+            </button>
+
+            <button class="suggestion" data-search="James Clear">
+              James Clear
+            </button>
+
+            <button class="suggestion" data-search="wellness">
+              Wellness
+            </button>
+
+            <button class="suggestion" data-search="creativity">
+              Creativity
+            </button>
+          </div>
+
+        </div>
+
+        <div class="search-hero-bottom">
+          <span>
+            <i class="fa-solid fa-shield-heart"></i>
+            Curated for curious minds
+          </span>
+
+          <span>
+            <i class="fa-solid fa-book"></i>
+            Discover something new
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Search Results -->
+    <section class="results-section">
+      <div class="container">
+
+        <div class="results-header">
+
+          <div>
+            <span class="eyebrow">Explore the collection</span>
+
+            <h2>
+              Discover your next
+              <em>favourite.</em>
+            </h2>
+          </div>
+
+          <div class="results-summary">
+            <strong id="resultsCount">24</strong>
+            <span>books found</span>
+          </div>
+
+        </div>
+
+
+        <!-- Filters -->
+        <div class="filter-panel">
+
+          <div class="filter-heading">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Refine your search</span>
+          </div>
+
+          <div class="filter-pills" id="filterPills">
+
+            <button
+              class="filter-pill active"
+              data-category="all"
+            >
+              All Books
+            </button>
+
+            <button
+              class="filter-pill"
+              data-category="fiction"
+            >
+              Fiction
+            </button>
+
+            <button
+              class="filter-pill"
+              data-category="business"
+            >
+              Business
+            </button>
+
+            <button
+              class="filter-pill"
+              data-category="wellness"
+            >
+              Mind &amp; Wellness
+            </button>
+
+            <button
+              class="filter-pill"
+              data-category="art"
+            >
+              Art &amp; Design
+            </button>
+
+            <button
+              class="filter-pill"
+              data-category="lifestyle"
+            >
+              Lifestyle
+            </button>
+
+            <button
+              class="filter-pill"
+              data-category="science"
+            >
+              Science
+            </button>
+
+          </div>
+
+          <div class="sort-control">
+            <label for="sortSelect">Sort by</label>
+
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="title-asc">Title: A–Z</option>
+              <option value="title-desc">Title: Z–A</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+
+        </div>
+
+
+        <!-- Loading State -->
+        <div class="loading-state" id="loadingState">
+          <div class="loading-spinner"></div>
+          <p>Opening the catalogue...</p>
+        </div>
+
+
+        <!-- Books Grid -->
+        <div
+          class="search-books-grid"
+          id="booksGrid"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- Empty State -->
+        <div class="empty-state hidden" id="emptyState">
+
+          <div class="empty-icon">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+
+          <h3>No books found</h3>
+
+          <p>
+            We couldn't find a book matching your search.
+            Try another title, author, or category.
+          </p>
+
+          <button class="reset-button" id="resetButton">
+            <i class="fa-solid fa-rotate-left"></i>
+            Reset Search
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Search CTA -->
+    <section class="search-cta-section">
+      <div class="container">
+
+        <div class="search-cta">
+
+          <div class="cta-decoration">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+
+          <div class="cta-content">
+            <span class="eyebrow">Still looking?</span>
+
+            <h2>
+              Let curiosity
+              lead the way.
+            </h2>
+
+            <p>
+              Browse our complete collection and find a story
+              that feels like it was waiting for you.
+            </p>
+          </div>
+
+          <a href="categories.html" class="cta-button">
+            Browse categories
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="brand">
+
+            <span class="brand-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </span>
+
+            <span class="brand-name">
+              Lumora<span>.</span>
+            </span>
+
+          </a>
+
+          <p>
+            A quiet corner for curious minds, timeless stories,
+            and new perspectives.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <a href="books.html">All Books</a>
+          <a href="categories.html">Categories</a>
+          <a href="newbooks.html">New Arrivals</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Lumora</h3>
+          <a href="journal.html">Journal</a>
+          <a href="account.html">My Account</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Visit</h3>
+          <span>hello@lumora.books</span>
+          <span>Mon–Fri, 9am–6pm</span>
+          <span>Made for readers.</span>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Lumora Books. Demo project.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Search Page JavaScript -->
+  <script src="../js/search.js"></script>
+
+</body>
+</html>

@@ -30,6 +30,9 @@
   />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Theme Script (before body to prevent flash) -->
+  <script src="js/theme.js"></script>
 </head>
 
 <body>
@@ -53,25 +56,29 @@
 
       <nav class="desktop-nav" aria-label="Primary Navigation">
         <a href="#home" class="active">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#bestsellers">Bestsellers</a>
-        <a href="#new-arrivals">New Arrivals</a>
-        <a href="#about">About</a>
+        <a href="html/categories.html">Categories</a>
+        <a href="html/books.html">Bestsellers</a>
+        <a href="html/newbooks.html">New Arrivals</a>
+        <a href="html/about.html">About</a>
       </nav>
 
       <div class="nav-actions">
-        <button class="icon-button" aria-label="Search">
+        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="html/search.html" class="icon-button" aria-label="Search">
           <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        </a>
 
-        <button class="icon-button account-button" aria-label="Account">
+        <a href="html/account.html" class="icon-button account-button" aria-label="Account">
           <i class="fa-regular fa-user"></i>
-        </button>
+        </a>
 
-        <button class="cart-button" aria-label="Shopping Cart">
+        <a href="html/cart.html" class="cart-button" aria-label="Shopping Cart">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="cart-count">2</span>
-        </button>
+        </a>
 
         <details class="mobile-menu">
           <summary aria-label="Open Menu">
@@ -80,10 +87,10 @@
 
           <nav class="mobile-nav" aria-label="Mobile Navigation">
             <a href="#home">Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#bestsellers">Bestsellers</a>
-            <a href="#new-arrivals">New Arrivals</a>
-            <a href="#about">About</a>
+            <a href="html/categories.html">Categories</a>
+            <a href="html/books.html">Bestsellers</a>
+            <a href="html/newbooks.html">New Arrivals</a>
+            <a href="html/about.html">About</a>
           </nav>
         </details>
       </div>
@@ -112,12 +119,12 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#bestsellers" class="button button-primary">
+            <a href="html/books.html" class="button button-primary">
               Explore Collection
               <i class="fa-solid fa-arrow-right"></i>
             </a>
 
-            <a href="#categories" class="button button-secondary">
+            <a href="html/categories.html" class="button button-secondary">
               Browse Categories
             </a>
           </div>
@@ -240,14 +247,14 @@
             <h2>Find your next obsession.</h2>
           </div>
 
-          <a href="#bestsellers" class="text-link">
+          <a href="html/categories.html" class="text-link">
             View all categories
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
 
         <div class="category-grid">
-          <a href="#bestsellers" class="category-card category-fiction">
+          <a href="html/categories.html" class="category-card category-fiction">
             <div class="category-icon">
               <i class="fa-solid fa-feather-pointed"></i>
             </div>
@@ -261,7 +268,7 @@
             <i class="fa-solid fa-arrow-up-right-from-square category-arrow"></i>
           </a>
 
-          <a href="#bestsellers" class="category-card category-business">
+          <a href="html/categories.html" class="category-card category-business">
             <div class="category-icon">
               <i class="fa-solid fa-chart-line"></i>
             </div>
@@ -275,7 +282,7 @@
             <i class="fa-solid fa-arrow-up-right-from-square category-arrow"></i>
           </a>
 
-          <a href="#bestsellers" class="category-card category-mind">
+          <a href="html/categories.html" class="category-card category-mind">
             <div class="category-icon">
               <i class="fa-solid fa-brain"></i>
             </div>
@@ -289,7 +296,7 @@
             <i class="fa-solid fa-arrow-up-right-from-square category-arrow"></i>
           </a>
 
-          <a href="#bestsellers" class="category-card category-design">
+          <a href="html/categories.html" class="category-card category-design">
             <div class="category-icon">
               <i class="fa-solid fa-palette"></i>
             </div>
@@ -315,7 +322,7 @@
             <h2>Bestsellers worth knowing.</h2>
           </div>
 
-          <a href="#new-arrivals" class="text-link">
+          <a href="html/books.html" class="text-link">
             Explore all books
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -521,7 +528,7 @@
             curated recommendations from our editorial team.
           </p>
 
-          <a href="#about" class="button button-light">
+          <a href="html/journal.html" class="button button-light">
             Read the Journal
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -566,7 +573,7 @@
             <h2>New arrivals.</h2>
           </div>
 
-          <a href="#home" class="text-link">
+          <a href="html/newbooks.html" class="text-link">
             See all new books
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -692,26 +699,26 @@
 
       <div class="footer-column">
         <h3>Discover</h3>
-        <a href="#bestsellers">Bestsellers</a>
-        <a href="#new-arrivals">New Arrivals</a>
-        <a href="#categories">Categories</a>
-        <a href="#home">Gift Cards</a>
+        <a href="html/books.html">Bestsellers</a>
+        <a href="html/newbooks.html">New Arrivals</a>
+        <a href="html/categories.html">Categories</a>
+        <a href="html/cart.html">Gift Cards</a>
       </div>
 
       <div class="footer-column">
         <h3>Information</h3>
-        <a href="#about">About Lumora</a>
-        <a href="#about">Our Journal</a>
-        <a href="#about">Shipping &amp; Returns</a>
-        <a href="#about">Contact Us</a>
+        <a href="html/about.html">About Lumora</a>
+        <a href="html/journal.html">Our Journal</a>
+        <a href="html/cart.html">Shipping &amp; Returns</a>
+        <a href="html/about.html">Contact Us</a>
       </div>
 
       <div class="footer-column">
         <h3>Customer Care</h3>
-        <a href="#about">Help Center</a>
-        <a href="#about">Track Order</a>
-        <a href="#about">Privacy Policy</a>
-        <a href="#about">Terms of Service</a>
+        <a href="html/about.html">Help Center</a>
+        <a href="html/cart.html">Track Order</a>
+        <a href="html/about.html">Privacy Policy</a>
+        <a href="html/about.html">Terms of Service</a>
       </div>
     </div>
 
